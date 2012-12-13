@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GradeMaster - @TEACHERNAME</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">@TEACHERNAME</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#createassignment">Create Assignment</a></li>
+                            <li><a href="#calendar">Calendar</a></li>
+                            <li><a href="#gradebook">Gradebook</a></li>
+                            <li><a href="#attendance">Attendance</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#1">@CLASS1NAME</a></li>
+                                    <li><a href="#2">@CLASS2NAME</a></li>
+                                    <li><a href="#3">@CLASS3NAME</a></li>
+                                    <li><a href="#4">@CLASS4NAME</a></li>
+                                    <li><a href="#5">@CLASS5NAME</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form pull-right">
+                        	<button type="submit" class="btn">Change User</button>
+                            <button type="submit" class="btn">Sign out</button>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>Welcome, @TEACHERNAME!</h1>
+                <p>Welcome to GradeMaster I mean! This is the place for you to submit your student's grades in all your classes. I hope they're doing well!</p>
+                <p><a class="btn btn-primary btn-large">Might Be Used For Something but I'm afraid to remove it for it would be a pain to put back in. &raquo;</a></p>
+            </div>
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span4">
+                    <h2>Grade Overview</h2>
+                        <div class="column>">
+                        	<li><a href="#1">@CLASS1NAME</a> | @CLASS1GRADE</li>
+                            <li><a href="#2">@CLASS2NAME</a> | @CLASS2GRADE</li>
+                            <li><a href="#3">@CLASS3NAME</a> | @CLASS3GRADE</li>
+                            <li><a href="#4">@CLASS4NAME</a> | @CLASS4GRADE</li>
+                            <li><a href="#5">@CLASS5NAME</a> | @CLASS5GRADE</li>
+                            <br>
+                        </div>
+                    <p><a class="btn" href="#gradebook">Full Gradebook &raquo;</a></p>
+                </div>
+                <div class="span4">
+                    <h2>Quik Assignment Creation</h2>
+                    <form>
+                    	<select name="quikcreateclassselect">
+                    		<option selected>Select A Class</option>
+                    		<option value="quikcreateselectclass1">@CLASS1NAME</option>
+                    		<option value="quikcreateselectclass2">@CLASS2NAME</option>
+                    		<option value="quikcreateselectclass3">@CLASS3NAME</option>
+                    		<option value="quikcreateselectclass4">@CLASS4NAME</option>
+                    		<option value="quikcreateselectclass5">@CLASS5NAME</option>
+                    	</select>
+                    	<input type="text" name="quikcreatename" placeholder="Assignment Name">
+                    	<input type="date" name="quikcreateduedate" placeholder="Assignment Due-Date">
+                    	<select name="quikcreatemultiplier">
+                    		<option value="quikcreatemultiplier1x">1x</option>
+                    		<option value="quikcreatemultiplier2x">2x</option>
+                    		<option value="quikcreatemultiplier3x">3x</option>
+                    		<option value="quikcreatemultiplier4x">4x</option>
+                    		<option value="quikcreatemultiplier5x">5x</option>
+                    	</select>
+                    	<br>
+                    	<button type="submit" class="btn btn-primary">Submit Assignment</button>
+                    </form>
+                    <p><a class="btn" href="#todolist">Full Assignment Creation &raquo;</a></p>
+               </div>
+                <div class="span4">
+                    <h2>Quik Attendance</h2>
+                    <form>
+                    	<select name="quikattendanceclass">
+                    		<option selected>Choose a Class</option>
+                    		<option value="quikattendance@CLASS1NAME">@CLASS1NAME</option>
+                    		<option value="quikattendance@CLASS2NAME">@CLASS2NAME</option>
+                    		<option value="quikattendance@CLASS3NAME">@CLASS3NAME</option>
+                    		<option value="quikattendance@CLASS4NAME">@CLASS4NAME</option>
+                    		<option value="quikattendance@CLASS5NAME">@CLASS5NAME</option>
+                    	</select>
+                    	<select name="quikattendancestudent">
+                    		<option selected>Select a Student</option>
+                    		<option value="quikattendance@STUDENT1NAME">@STUDENT1NAME</option>
+                    		<option value="quikattendance@STUDENT2NAME">@STUDENT2NAME</option>
+                    		<option value="quikattendance@STUDENT3NAME">@STUDENT3NAME</option>
+                    		<option value="quikattendance@STUDENT4NAME">@STUDENT4NAME</option>
+                    		<option value="quikattendance@STUDENT5NAME">@STUDENT5NAME</option>
+                    	</select>
+                    	<p>Remember, Present until proven Absent!</p>
+                    	<input type
+                    </form>
+                    <p><a class="btn" href="#">Full Attendance &raquo;</a></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; GradeMaster 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
