@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>GradeMaster - @STUDENTNAME</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -26,9 +26,6 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -37,29 +34,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Project name</a>
+                    <a class="brand" href="#">@STUDENTNAME</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#todolist">To-Do List</a></li>
+                            <li><a href="#calendar">Calendar</a></li>
+                            <li><a href="#gradebook">Gradebook</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#1">@CLASS1NAME</a></li>
+                                    <li><a href="#2">@CLASS2NAME</a></li>
+                                    <li><a href="#3">@CLASS3NAME</a></li>
+                                    <li><a href="#4">@CLASS4NAME</a></li>
+                                    <li><a href="#5">@CLASS5NAME</a></li>
                                     <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li class="nav-header">Specials</li>
+                                    <li><a href="#6">@CLASS6NAME</a></li>
+                                    <li><a href="#7">@CLASS7NAME</a></li>
+                                    <li><a href="#8">@CLASS8NAME</a></li>
+                                    <li><a href="#9">@CLASS9NAME</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
+                            <button type="submit" class="btn">Sign out</button>
                         </form>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -70,34 +70,46 @@
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+                <h1>Welcome, @STUDENTNAME!</h1>
+                <p>Welcome to GradeMaster I mean! This is the place for you to check your grades in all your classes. I hope you're doing well!</p>
+                <p><a class="btn btn-primary btn-large">Might Be Used For Something &raquo;</a></p>
             </div>
 
             <!-- Example row of columns -->
             <div class="row">
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>Grade Overview</h2>
+                        <div class="column>">
+                        	<li><a href="#1">@CLASS1NAME</a> | @CLASS1GRADE</li>
+                            <li><a href="#2">@CLASS2NAME</a> | @CLASS2GRADE</li>
+                            <li><a href="#3">@CLASS3NAME</a> | @CLASS3GRADE</li>
+                            <li><a href="#4">@CLASS4NAME</a> | @CLASS4GRADE</li>
+                            <li><a href="#5">@CLASS5NAME</a> | @CLASS5GRADE</li>
+                            <li class="nav-header">Specials</li>
+                            <li><a href="#6">@CLASS6NAME</a> | @CLASS6GRADE</li>
+                            <li><a href="#7">@CLASS7NAME</a> | @CLASS7GRADE</li>
+                            <li><a href="#8">@CLASS8NAME</a> | @CLASS8GRADE</li>
+                            <li><a href="#9">@CLASS9NAME</a> | @CLASS9GRADE</li>
+                            <br>
+                        </div>
+                    <p><a class="btn" href="#gradebook">Full Gradebook &raquo;</a></p>
                 </div>
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>To-Do List Overview</h2>
+                    <p>@TODOLIST</p>
+                    <p><a class="btn" href="#todolist">Full To-Do List &raquo;</a></p>
                </div>
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                    <h2>Calendar Events</h2>
+                    <p>@CALENDARLIST</p>
+                    <p><a class="btn" href="#">Full Calendar &raquo;</a></p>
                 </div>
             </div>
 
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p>&copy; GradeMaster 2012</p>
             </footer>
 
         </div> <!-- /container -->
