@@ -9,8 +9,8 @@ import java.util.HashMap;
 
 public abstract class DataInterface implements IDataInterface {
 
-	//Path should always be different, so it is path error here.
-	public String path = "PathError";
+	//See IRawLoader.java
+	public IRawLoader loader;
 	
 	//True=Caching on; False = caching off
 	public boolean cached = true;
@@ -22,24 +22,24 @@ public abstract class DataInterface implements IDataInterface {
 	HashMap<Object,Object> cache = new HashMap<Object,Object>();
 	
 	//Initiates class with given path and caching
-	public DataInterface(String path,boolean cached) {
+	public DataInterface(IRawLoader l,boolean cached) {
 		this.cached=true;
-		this.path=path;
+		this.loader=l;
 	}
 	
 	// Initiates with a certain path to load and caching on
-	public DataInterface(String path) {
-		this(path,true);
+	public DataInterface(IRawLoader l) {
+		this(l,true);
 	}
 
 	@Override
 	public abstract void flush() throws IOException;
 
 	@Override
-	public abstract HashMap<Object, Object> loadData();
+	public abstract HashMap<Object, Object> loadData() throws IOException, Exception;
 
 	@Override
-	public HashMap<Object, Object> getData() {
+	public HashMap<Object, Object> getData() throws Exception {
 		if (cached && cacheLoaded) {
 			return cache;
 		} else {
