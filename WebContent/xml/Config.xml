@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<config
+xmlns="http://www.grademaster.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="Config.xsd">
 
 <name>Grade Master</name>
