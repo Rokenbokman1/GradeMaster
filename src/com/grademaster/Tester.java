@@ -1,11 +1,12 @@
 package com.grademaster;
-import java.util.HashMap;
 
 import com.grademaster.logging.*;
 import com.grademaster.data.*;
+import com.grademaster.data.objects.Config;
 //Author: Jake Billings
 //Date created: 12-13-2012
 //Desc: Tests functions of the program
+import com.grademaster.data.xml.XMLConfigAdapter;
 
 public class Tester {
 	public static void main(String[] args) {
@@ -17,16 +18,17 @@ public class Tester {
 		log.log("Done", ErrorLevel.DEBUG);
 		log.log("Testing Data...",ErrorLevel.INFO);
 		RawLocalLoader loader = new RawLocalLoader("Config.xml");
+		XMLConfigAdapter a = new XMLConfigAdapter();
 		log.log("Path: " + loader.getPath());
-		XMLInterface xml = new XMLInterface(loader);
-		HashMap<Object,Object> map = null;
+		XMLInterface xml = new XMLInterface(loader,a);
+		Config con = null;
 		try {
-			map = xml.getData();
+			con = (Config) xml.getData();
 		} catch (Exception e) {
 			log.log(e);
 		}
-		log.log(map.toString());
-		log.log(map.keySet().toString());
+		log.log(con.toString());
+		log.log(con.author);
 		log.log("Done.",ErrorLevel.INFO);
 	}
 }
