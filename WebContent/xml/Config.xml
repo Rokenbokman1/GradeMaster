@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="Config.xsd">
+
+<name>Grade Master</name>
+	<metadata>
+		<author>Jake Billings</author>
+		<date>12-13-2012</date>
+		<version>1.0.0.0</version>
+	</metadata>
+	
+</config>
