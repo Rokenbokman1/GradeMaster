@@ -9,16 +9,21 @@ import com.grademaster.data.IDataObject;
 public class Config implements IDataObject {
 	
 	public String name;
-	public String author;
-	public String date;
-	public String version;
 	public String logoPath;
+	public Metadata metadata;
 	
 	public Config(String name,String author,String date,String version,String logoPath) {
 		this.name=name;
-		this.author=author;
-		this.date=date;
-		this.version=version;
+		this.metadata=new Metadata();
+		this.metadata.author=author;
+		this.metadata.date=date;
+		this.metadata.version=version;
 		this.logoPath=logoPath;
+	}
+	//Stores data for the metadata
+	public class Metadata implements IDataObject {
+		public String author;
+		public String date;
+		public String version;
 	}
 }

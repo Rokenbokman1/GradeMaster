@@ -1,4 +1,5 @@
 package com.grademaster.data.xml;
+
 import org.w3c.dom.Document;
 
 import com.grademaster.data.IDataObject;
@@ -18,6 +19,12 @@ public class XMLConfigAdapter implements IXMLAdapter {
 		Config con = new Config(name,author,date,version,logoPath);
 		
 		return con;
+	}
+
+	@Override
+	public void objectToData(Object o) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -11,7 +11,7 @@ public abstract class DataInterface implements IDataInterface {
 	//See IRawLoader.java
 	public IRawLoader loader;
 	
-	//
+	//Data adapter for converting raw input to data
 	public IDataAdapter adapter;
 	
 	//True=Caching on; False = caching off
@@ -27,6 +27,7 @@ public abstract class DataInterface implements IDataInterface {
 	public DataInterface(IRawLoader l,IDataAdapter a,boolean cached) {
 		this.cached=true;
 		this.loader=l;
+		this.adapter=a;
 	}
 	
 	// Initiates with a certain path to load and caching on
