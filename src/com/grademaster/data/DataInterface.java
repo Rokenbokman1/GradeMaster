@@ -15,6 +15,9 @@ public abstract class DataInterface implements IDataInterface {
 	//True=Caching on; False = caching off
 	public boolean cached = true;
 	
+	//True when initial data has been loaded and cached
+	public boolean cacheLoaded = false;
+	
 	//Stores cached objects if caching is enabled
 	HashMap<Object,Object> cache = new HashMap<Object,Object>();
 	
@@ -30,45 +33,41 @@ public abstract class DataInterface implements IDataInterface {
 	}
 
 	@Override
-	public void flush() throws IOException {
-		// TODO Auto-generated method stub
-
-	}
+	public abstract void flush() throws IOException;
 
 	@Override
-	public HashMap<Object, Object> loadData() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract HashMap<Object, Object> loadData();
 
 	@Override
 	public HashMap<Object, Object> getData() {
-		// TODO Auto-generated method stub
-		return null;
+		if (cached && cacheLoaded) {
+			return cache;
+		} else {
+			HashMap<Object,Object> data = loadData();
+			cacheLoaded=true;
+			return data;
+		}
 	}
 
 	@Override
 	public void updateCache(HashMap<Object, Object> data) {
-		// TODO Auto-generated method stub
-
+		cache=data;
 	}
 
 	@Override
 	public void dumpData() throws IOException {
-		// TODO Auto-generated method stub
-
+		writeData(cache);
 	}
 
 	@Override
-	public void dumpData(HashMap<Object, Object> data) throws IOException {
-		// TODO Auto-generated method stub
-
+	public void dumpData(HashMap<Object,Object> data) throws IOException {
+		if (cached){
+			updateCache(data);
+		}
+		writeData(data);
 	}
 
 	@Override
-	public void writeData(HashMap<Object, Object> data) throws IOException {
-		// TODO Auto-generated method stub
-
-	}
+	public abstract void writeData(HashMap<Object, Object> data) throws IOException;
 
 }
