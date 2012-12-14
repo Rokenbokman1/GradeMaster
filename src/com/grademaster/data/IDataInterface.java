@@ -8,10 +8,6 @@ import java.util.HashMap;
 //Desc: provides an interface for base methods for data io.
 
 public interface IDataInterface extends Flushable {
-	//Path should always be different, so it is path error here.
-	public String path = "PathError";
-	//True=Caching on; False = caching off
-	public boolean cached = true;
 	// Loads data from file.  DOES NOT UPDATE CACHE; DOES NOT USE CACHE
 	public HashMap<Object,Object> loadData();
 	// Loads data using and/or updating cache.
@@ -24,4 +20,5 @@ public interface IDataInterface extends Flushable {
 	public void dumpData(HashMap<Object,Object> data) throws IOException;
 	// Writes provided data to data source; DOES NOT UPDATE CACHE
 	public void writeData(HashMap<Object,Object> data) throws IOException;
+	// NOTE: Flush must be called to finalize any data writing.
 }
