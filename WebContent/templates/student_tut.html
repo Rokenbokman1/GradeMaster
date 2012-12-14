@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GradeMaster - @STUDENTNAME</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">@STUDENTNAME</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#todolist">To-Do List</a></li>
+                            <li><a href="#calendar">Calendar</a></li>
+                            <li><a href="#gradebook">Gradebook</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#1">@CLASS1NAME</a></li>
+                                    <li><a href="#2">@CLASS2NAME</a></li>
+                                    <li><a href="#3">@CLASS3NAME</a></li>
+                                    <li><a href="#4">@CLASS4NAME</a></li>
+                                    <li><a href="#5">@CLASS5NAME</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Specials</li>
+                                    <li><a href="#6">@CLASS6NAME</a></li>
+                                    <li><a href="#7">@CLASS7NAME</a></li>
+                                    <li><a href="#8">@CLASS8NAME</a></li>
+                                    <li><a href="#9">@CLASS9NAME</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form pull-right">
+                        	<button type="submit" class="btn">Change User</button>
+                            <button type="submit" class="btn">Sign out</button>
+                        </form>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>Welcome, @STUDENTNAME!</h1>
+                <p>Welcome to GradeMaster I mean! This is the place for you to check your grades in all your classes. I hope you're doing well!</p>
+                <p><a class="btn btn-primary btn-large" href="student_tut_main.html">Begin Tutorial &raquo;</a></p>
+            </div>
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span4">
+                    <h2>Grade Overview</h2>
+                        <div class="column>">
+                        	<li><a href="#1">@CLASS1NAME</a> | @CLASS1GRADE</li>
+                            <li><a href="#2">@CLASS2NAME</a> | @CLASS2GRADE</li>
+                            <li><a href="#3">@CLASS3NAME</a> | @CLASS3GRADE</li>
+                            <li><a href="#4">@CLASS4NAME</a> | @CLASS4GRADE</li>
+                            <li><a href="#5">@CLASS5NAME</a> | @CLASS5GRADE</li>
+                            <li class="nav-header">Specials</li>
+                            <li><a href="#6">@CLASS6NAME</a> | @CLASS6GRADE</li>
+                            <li><a href="#7">@CLASS7NAME</a> | @CLASS7GRADE</li>
+                            <li><a href="#8">@CLASS8NAME</a> | @CLASS8GRADE</li>
+                            <li><a href="#9">@CLASS9NAME</a> | @CLASS9GRADE</li>
+                            <br>
+                        </div>
+                    <p><a class="btn" href="#gradebook">Full Gradebook &raquo;</a></p>
+                </div>
+                <div class="span4">
+                    <h2>To-Do List Overview</h2>
+                    <p>@TODOLIST</p>
+                    <p><a class="btn" href="#todolist">Full To-Do List &raquo;</a></p>
+               </div>
+                <div class="span4">
+                    <h2>Calendar Events</h2>
+                    <p>@CALENDARLIST</p>
+                    <p><a class="btn" href="#">Full Calendar &raquo;</a></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; GradeMaster 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
