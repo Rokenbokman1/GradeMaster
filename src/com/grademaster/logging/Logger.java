@@ -19,6 +19,12 @@ public class Logger {
 		this.out=out;
 		this.err=err;
 	}
+	public void log(Throwable t) {
+		t.printStackTrace(err);
+	}
+	public void log(String message) {
+		log(message,ErrorLevel.DEBUG);
+	}
 	//Log a message to console or other source later in deveolopment
 	public void log(String message, ErrorLevel level) {
 		Date date = new Date();

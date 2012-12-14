@@ -9,9 +9,9 @@ import java.util.HashMap;
 
 public interface IDataInterface extends Flushable {
 	// Loads data from file.  DOES NOT UPDATE CACHE; DOES NOT USE CACHE
-	public HashMap<Object,Object> loadData();
+	public HashMap<Object,Object> loadData() throws IOException, Exception;
 	// Loads data using and/or updating cache.
-	public HashMap<Object,Object> getData();
+	public HashMap<Object,Object> getData() throws IOException, Exception;
 	// Updates cache with given data
 	public void updateCache(HashMap<Object,Object> data);
 	// Writes the contents of the current cache to the data source.
