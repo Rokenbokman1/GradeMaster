@@ -3,6 +3,10 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <!--HI! This code is by Matt Rieth.
+    	With help from http://html5boilerplate.com/
+    	Along with Jake Billings, Ryan Vandersmith and the rest of the GradeMaster Team (which is just us three.)
+    	All code is Property of GradeMaster and other mentioned sources-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -108,7 +112,7 @@
                     	<br>
                     	<button type="submit" class="btn btn-primary">Submit Assignment</button>
                     </form>
-                    <p><a class="btn" href="#todolist">Full Assignment Creation &raquo;</a></p>
+                    <p><a class="btn" href="#createassingment">Full Assignment Creation &raquo;</a></p>
                </div>
                 <div class="span4">
                     <h2>Quik Attendance</h2>
@@ -130,8 +134,15 @@
                     		<option value="quikattendance@STUDENT5NAME">@STUDENT5NAME</option>
                     	</select>
                     	<p>Remember, Present until proven Absent!</p>
+                    	<select name="quikattendanceselect">
+                    		<option selected value="quikattendanceselectpresent">Present</option>
+                    		<option value="quikattendanceselecttardy">Tardy</option>
+                    		<option value="quikattendanceselectabsent">Absent</option>
+                    	</select>
+                    	<br>
+                    	<button type="submit" class="btn btn-primary">Submit Attendance</button>
                     </form>
-                    <p><a class="btn" href="#">Full Attendance &raquo;</a></p>
+                    <p><a class="btn" href="#attendance">Full Attendance &raquo;</a></p>
                 </div>
             </div>
 
