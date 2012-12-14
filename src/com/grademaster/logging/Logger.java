@@ -20,6 +20,7 @@ public class Logger {
 		this.err=err;
 	}
 	public void log(Throwable t) {
+		log("Throwable detected.  Printing stack trace...", ErrorLevel.ERROR);
 		t.printStackTrace(err);
 	}
 	public void log(String message) {

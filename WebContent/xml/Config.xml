@@ -10,5 +10,6 @@ xsi:schemaLocation="Config.xsd">
 		<date>12-13-2012</date>
 		<version>1.0.0.0</version>
 	</metadata>
-	
+<logo>/img/logo.png</logo>
+
 </config>
