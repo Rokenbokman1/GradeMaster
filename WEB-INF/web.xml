@@ -6,6 +6,6 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>viewConfig</servlet-name>
-	<url-pattern>/ViewConfig</url-pattern>
+	<url-pattern>/ViewConfig/*</url-pattern>
 </servlet-mapping>
 </web-app>
