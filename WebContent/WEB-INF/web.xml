@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="GradeMaster_Main" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+<servlet>
+	<servlet-name>viewConfig</servlet-name>
+	<servlet-class>com.grademaster.servlets.ConfigViewServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>viewConfig</servlet-name>
+	<url-pattern>/ViewConfig</url-pattern>
+</servlet-mapping>
 </web-app>
