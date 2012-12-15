@@ -1,5 +1,9 @@
-<hr />
-<footer>
+<jsp:include page="header.jsp"/>
+    <body>
+        <jsp:include page="nav.jsp"/>
+        <div class="container">
+            
+            <footer>
                 <p>&copy; GradeMaster 2012</p>
             </footer>
 

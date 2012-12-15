@@ -16,6 +16,41 @@
 	<url-pattern>/ViewConfig.do</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>loginMain</servlet-name>
+	<servlet-class>com.grademaster.servlets.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>loginMain</servlet-name>
+	<url-pattern>/login.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>indexServlet</servlet-name>
+	<servlet-class>com.grademaster.servlets.IndexServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>indexServlet</servlet-name>
+	<url-pattern>/index.do</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>indexServlet</servlet-name>
+	<url-pattern>/index</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>indexServlet</servlet-name>
+	<url-pattern>/index.jsp</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>logoutServlet</servlet-name>
+	<servlet-class>com.grademaster.servlets.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>logoutServlet</servlet-name>
+	<url-pattern>/logout.do</url-pattern>
+</servlet-mapping>
+
 <error-page>
 	<error-code>404</error-code>
 	<location>/err/err_404.jsp</location>
