@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+
 import org.w3c.dom.Document;
 
 import com.grademaster.data.xml.IXMLAdapter;
@@ -29,16 +30,16 @@ public class XMLInterface extends DataInterface {
 
 	@Override
 	public IDataObject loadData() throws Exception {
-		String raw = loader.loadString();
+		String raw = loader.loadString().replace("\n","").replace("	","");
 		Document d = loadXMLFromString(raw);
 		IDataObject o = adapter.dataToObject(d);
 		return o;
 	}
 
 	@Override
-	public void writeData(IDataObject data) throws IOException {
-		// TODO Auto-generated method stub
-		
+	public void writeData(IDataObject data) throws Exception {
+		String toWrite = adapter.objectToData(data);
+		loader.writeString(toWrite);		
 	}
 	
 	public Document loadXMLFromString(String xml) throws Exception

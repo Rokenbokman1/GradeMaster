@@ -14,10 +14,10 @@ public interface IDataInterface extends Flushable {
 	// Updates cache with given data
 	public void updateCache(IDataObject data);
 	// Writes the contents of the current cache to the data source.
-	public void dumpData() throws IOException;
-	// Writes updates cache with given data, then writes the data
-	public void dumpData(IDataObject data) throws IOException;
+	public void dumpData() throws Exception;
+	// Updates cache with given data, then writes the data
+	public void dumpData(IDataObject data) throws Exception;
 	// Writes provided data to data source; DOES NOT UPDATE CACHE
-	public void writeData(IDataObject data) throws IOException;
+	public void writeData(IDataObject data) throws Exception;
 	// NOTE: Flush must be called to finalize any data writing.
 }

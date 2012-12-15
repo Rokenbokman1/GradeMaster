@@ -1,7 +1,9 @@
 package com.grademaster.data;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class RawLocalLoader implements IRawLoader {
@@ -31,6 +33,14 @@ public class RawLocalLoader implements IRawLoader {
 	@Override
 	public String getPath() {
 		return path;
+	}
+
+	@Override
+	public void writeString(String s) throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+		writer.write(s);
+		writer.flush();
+		writer.close();
 	}
 
 }

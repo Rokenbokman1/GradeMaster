@@ -29,6 +29,17 @@ public class Tester {
 		log.log(con.metadata.author+" wrote this configuration file.");
 		log.log("Now trying to edit configuration settings...");
 		
+		con.metadata.date=log.getDate();
+		
+		log.log("Config new version: "+con.metadata.version);
+		log.log("Config new author: "+con.metadata.author);
+		
+		try {
+			xml.dumpData(con);
+		} catch (Exception e) {
+			log.log(e);
+		}
+		
 		log.log("Done.",ErrorLevel.INFO);
 	}
 }

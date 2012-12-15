@@ -2,6 +2,7 @@ package com.grademaster.data;
 
 import java.io.IOException;
 
+
 //Author: Jake Billings
 //Date created: 12-13-2012
 //Desc: A very basic implementation of IDataInterface that leaves most of the code to subclasses.
@@ -58,12 +59,12 @@ public abstract class DataInterface implements IDataInterface {
 	}
 
 	@Override
-	public void dumpData() throws IOException {
+	public void dumpData() throws Exception {
 		writeData(cache);
 	}
 
 	@Override
-	public void dumpData(IDataObject data) throws IOException {
+	public void dumpData(IDataObject data) throws Exception {
 		if (cached){
 			updateCache(data);
 		}
@@ -71,6 +72,6 @@ public abstract class DataInterface implements IDataInterface {
 	}
 
 	@Override
-	public abstract void writeData(IDataObject data) throws IOException;
+	public abstract void writeData(IDataObject data) throws Exception;
 
 }

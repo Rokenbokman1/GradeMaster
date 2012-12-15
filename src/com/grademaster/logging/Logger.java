@@ -28,13 +28,16 @@ public class Logger {
 	}
 	//Log a message to console or other source later in deveolopment
 	public void log(String message, ErrorLevel level) {
-		Date date = new Date();
-		String output="["+date+"] ["+level+"] "+message;
+		String output="["+getDate()+"] ["+level+"] "+message;
 		if (level.error_level > 3) {
 			err.println(output);
 		} else {
 			out.println(output);
 		}
+	}
+	public String getDate() {
+		Date date = new Date();
+		return date.toString();
 	}
 	//A test method that should be removed before release.
 	public static void test_log() {
