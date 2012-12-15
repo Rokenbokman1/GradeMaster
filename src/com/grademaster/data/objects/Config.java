@@ -1,5 +1,6 @@
 package com.grademaster.data.objects;
 
+import com.grademaster.Globals;
 import com.grademaster.data.IDataObject;
 
 //Author: Jake Billings
@@ -13,6 +14,7 @@ public class Config implements IDataObject {
 	public Metadata metadata;
 	
 	public Config(String name,String author,String date,String version,String logoPath) {
+		Globals.getLogger().log("Created new Config object.");
 		this.name=name;
 		this.metadata=new Metadata();
 		this.metadata.author=author;

@@ -1,5 +1,7 @@
 package com.grademaster.logging;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Date;
 
@@ -10,18 +12,27 @@ import java.util.Date;
 public class Logger {
 	private PrintStream out;
 	private PrintStream err;
+	public final String path;
+	public final PrintStream fileOut;
 	//Creates a logger with default console output
-	public Logger() {
-		this(System.out,System.err);
+	public Logger() throws FileNotFoundException {
+		this("GradeMaster.log");
+	}
+	//Creates logger with given output path
+	public Logger(String path) throws FileNotFoundException {
+		this(System.out,System.err,"GradeMaster.log");
 	}
 	//Creates a logger with adaptable output streams
-	public Logger(PrintStream out, PrintStream err) {
+	public Logger(PrintStream out, PrintStream err, String path) throws FileNotFoundException {
 		this.out=out;
 		this.err=err;
+		this.path=path;
+		this.fileOut=new PrintStream(new FileOutputStream(path));
 	}
 	public void log(Throwable t) {
 		log("Throwable detected.  Printing stack trace...", ErrorLevel.ERROR);
 		t.printStackTrace(err);
+		t.printStackTrace(fileOut);
 	}
 	public void log(String message) {
 		log(message,ErrorLevel.DEBUG);
@@ -34,15 +45,11 @@ public class Logger {
 		} else {
 			out.println(output);
 		}
+		fileOut.println(output);
+		fileOut.flush();
 	}
 	public String getDate() {
 		Date date = new Date();
 		return date.toString();
-	}
-	//A test method that should be removed before release.
-	public static void test_log() {
-		Logger log = new Logger();
-		log.log("Test", ErrorLevel.DEBUG);
-		log.log("Test 2", ErrorLevel.SEVERE);
 	}
 }

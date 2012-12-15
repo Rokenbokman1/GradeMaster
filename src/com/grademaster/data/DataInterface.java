@@ -2,6 +2,8 @@ package com.grademaster.data;
 
 import java.io.IOException;
 
+import com.grademaster.Globals;
+
 
 //Author: Jake Billings
 //Date created: 12-13-2012
@@ -26,6 +28,7 @@ public abstract class DataInterface implements IDataInterface {
 	
 	//Initiates class with given path and caching
 	public DataInterface(IRawLoader l,IDataAdapter a,boolean cached) {
+		Globals.getLogger().log("Created new Data Interface.");
 		this.cached=true;
 		this.loader=l;
 		this.adapter=a;
@@ -45,8 +48,10 @@ public abstract class DataInterface implements IDataInterface {
 	@Override
 	public IDataObject getData() throws Exception {
 		if (cached && cacheLoaded) {
+			Globals.getLogger().log("Returned cached data.");
 			return cache;
 		} else {
+			Globals.getLogger().log("Loaded new data.");
 			IDataObject data = loadData();
 			cacheLoaded=true;
 			return data;
@@ -55,16 +60,19 @@ public abstract class DataInterface implements IDataInterface {
 
 	@Override
 	public void updateCache(IDataObject data) {
+		Globals.getLogger().log("Updating cache...");
 		cache=data;
 	}
 
 	@Override
 	public void dumpData() throws Exception {
+		Globals.getLogger().log("Dumping current cache.");
 		writeData(cache);
 	}
 
 	@Override
 	public void dumpData(IDataObject data) throws Exception {
+		Globals.getLogger().log("Dumping data...");
 		if (cached){
 			updateCache(data);
 		}

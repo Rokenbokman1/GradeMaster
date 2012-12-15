@@ -17,11 +17,13 @@ public class ConfigViewServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		Logger log = Globals.log;
+		Logger log = Globals.getLogger();
+		
+	    log.log("Config View Servlet Started.",ErrorLevel.INFO);
+	    
 		Globals.updateConfig();
 	    Config config = Globals.getConfig();
 	    
-	    log.log("Config View Servlet Started.",ErrorLevel.INFO);
 	    req.setAttribute("config", config);
 	    
 	    RequestDispatcher view = req.getRequestDispatcher("ViewConfig.jsp");

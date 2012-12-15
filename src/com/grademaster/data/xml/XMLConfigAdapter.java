@@ -4,6 +4,7 @@ import java.io.StringWriter;
 
 import org.w3c.dom.Document;
 
+import com.grademaster.Globals;
 import com.grademaster.data.IDataObject;
 import com.grademaster.data.objects.Config;
 
@@ -21,6 +22,7 @@ public class XMLConfigAdapter implements IXMLAdapter {
 
 	@Override
 	public IDataObject dataToObject(Object o) {
+		Globals.getLogger().log("Converting XML data to Config object...");
 		
 		Document doc = (Document) o;
 		String name= doc.getElementsByTagName("name").item(0).getTextContent();
@@ -36,6 +38,8 @@ public class XMLConfigAdapter implements IXMLAdapter {
 
 	@Override
 	public String objectToData(Object o) throws Exception {
+		Globals.getLogger().log("Converting Config object to String (should be XML)...");
+		
 		//Cast object to config
 		Config con = (Config) o;
 		
