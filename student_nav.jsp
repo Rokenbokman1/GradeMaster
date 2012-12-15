@@ -22,6 +22,7 @@ Config iConfig = Globals.getConfig(); %>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
+                            <% if ((Boolean) session.getAttribute("loggedIn")) { %>
                             <li><a href="#todolist">To-Do List</a></li>
                             <li><a href="#calendar">Calendar</a></li>
                             <li><a href="#gradebook">Gradebook</a></li>
@@ -41,6 +42,7 @@ Config iConfig = Globals.getConfig(); %>
                                     <li><a href="#9">@CLASS9NAME</a></li>
                                 </ul>
                             </li>
+                            <% } %>
                         </ul>
                         <% if ((Boolean) session.getAttribute("loggedIn")==true) {%>
                         <form class="navbar-form pull-right" action="logout.do" method="get">
