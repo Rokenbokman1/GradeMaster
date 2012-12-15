@@ -11,7 +11,7 @@ public class RawLocalLoader implements IRawLoader {
 	String path;
 	
 	public RawLocalLoader(String path) {
-		this.path=System.getProperty("user.dir")+System.getProperty("file.separator")+path;
+		this.path=path;
 	}
 	
 	@Override
