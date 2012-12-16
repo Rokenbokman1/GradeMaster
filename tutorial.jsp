@@ -8,9 +8,9 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 	}
 String tutorial = "both";
 if (!(request.getParameter("t")==null || request.getParameter("t") =="")) {
-	if (request.getParameter("t")=="student") {
+	if (request.getParameter("t").equals("student")) {
 		tutorial="student";
-	} else if (request.getParameter("t")=="teacher") {
+	} else if (request.getParameter("t").equals("teacher")) {
 		tutorial="teacher";
 	}
 }
