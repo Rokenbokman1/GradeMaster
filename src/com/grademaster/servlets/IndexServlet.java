@@ -21,8 +21,14 @@ public class IndexServlet extends HttpServlet {
 		
 	    log.log("Login servlet running...",ErrorLevel.INFO);
 	    log.log("Login servlet is not complete yet.",ErrorLevel.WARNING);
-	    boolean loggedIn = (Boolean) req.getSession(true).getAttribute("loggedIn");
-	    if (loggedIn==true && req.getAttribute("user")!=null) {
+	    boolean loggedIn = false;
+	    try {
+	    	loggedIn  = (Boolean) req.getSession(true).getAttribute("loggedIn");
+	    } catch (Exception e) {
+	    	log.log("No loggedin session data for user.",ErrorLevel.WARNING);
+	    }
+	    if (loggedIn==true) {
+	    	log.log("User is logged in.");
 	    	String redirect="index_misc.jsp";
 	    	String accountType = ((User) req.getSession(true).getAttribute("user")).getUserType();
 	    	if (accountType!=null && accountType=="teacher") {

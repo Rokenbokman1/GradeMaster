@@ -1,7 +1,7 @@
 <%@ page import="com.grademaster.*" %>
 <%@ page import="com.grademaster.data.objects.*" %>
 <% User user = null;
-if ((Boolean) session.getAttribute("loggedIn")) {
+if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) {
 	user =(User) session.getAttribute("user"); 
 }
 
@@ -14,7 +14,7 @@ Config iConfig = Globals.getConfig(); %>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="index.do"><% if ((Boolean)session.getAttribute("loggedIn")) { %>
+                    <a class="brand" href="index.do"><% if (session.getAttribute("loggedIn")!=null&&(Boolean)session.getAttribute("loggedIn")==true) { %>
                     @<%= user.getName() %>
                     <% } else { %>
                     @<%= iConfig.name %>
@@ -22,7 +22,7 @@ Config iConfig = Globals.getConfig(); %>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="index.do">Home</a></li>
-                            <% if ((Boolean) session.getAttribute("loggedIn")) { %>
+                            <% if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) { %>
                             <li><a href="todo.do">To-Do List</a></li>
                             <li><a href="calendar.do">Calendar</a></li>
                             <li><a href="gradebook.do">Gradebook</a></li>
@@ -47,7 +47,7 @@ Config iConfig = Globals.getConfig(); %>
                             </li>
                             <% } %>
                         </ul>
-                        <% if ((Boolean) session.getAttribute("loggedIn")==true) {%>
+                        <% if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) {%>
                         <form class="navbar-form pull-right" action="logout.do" method="get">
                         	<input type="submit" value="Log out" class="btn"/>
                         </form>
