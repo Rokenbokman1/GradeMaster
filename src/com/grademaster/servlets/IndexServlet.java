@@ -22,7 +22,7 @@ public class IndexServlet extends HttpServlet {
 	    log.log("Login servlet running...",ErrorLevel.INFO);
 	    log.log("Login servlet is not complete yet.",ErrorLevel.WARNING);
 	    boolean loggedIn = (Boolean) req.getSession(true).getAttribute("loggedIn");
-	    if (loggedIn==true) {
+	    if (loggedIn==true && req.getAttribute("user")!=null) {
 	    	String redirect="index_misc.jsp";
 	    	String accountType = ((User) req.getSession(true).getAttribute("user")).getUserType();
 	    	if (accountType!=null && accountType=="teacher") {
