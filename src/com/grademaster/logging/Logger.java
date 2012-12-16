@@ -20,7 +20,7 @@ public class Logger {
 	}
 	//Creates logger with given output path
 	public Logger(String path) throws FileNotFoundException {
-		this(System.out,System.err,"GradeMaster.log");
+		this(System.out,System.err,path);
 	}
 	//Creates a logger with adaptable output streams
 	public Logger(PrintStream out, PrintStream err, String path) throws FileNotFoundException {
@@ -31,6 +31,7 @@ public class Logger {
 	}
 	public void log(Throwable t) {
 		log("Throwable detected.  Printing stack trace...", ErrorLevel.ERROR);
+		log("Message: "+t.getMessage());
 		t.printStackTrace(err);
 		t.printStackTrace(fileOut);
 	}

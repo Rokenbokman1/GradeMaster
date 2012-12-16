@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
+import com.grademaster.auth.Authenticator;
 import com.grademaster.data.objects.User;
 import com.grademaster.logging.ErrorLevel;
 import com.grademaster.logging.Logger;
@@ -28,12 +29,18 @@ public class LoginServlet extends HttpServlet {
 	    if (req.getParameter("username")==null || req.getParameter("username")=="" || req.getParameter("password")==null || req.getParameter("password")=="") {
 	    	res.sendRedirect("login_form.jsp?error=Empty username or password");
 	    } else {
-	    	req.getSession(true).setAttribute("user", User.getInstance(req.getParameter("username"), req.getParameter("password"), req.getParameter("username"), req.getParameter("password"), req.getParameter("username")+req.getParameter("password"), req.getParameter("type")));
-		    req.getSession(true).setAttribute("loggedIn", true);
-		    if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {
-		    	res.sendRedirect("index.do");
-		    } else {
-		    	res.sendRedirect(req.getParameter("redirect"));
+	    	Authenticator auth = new Authenticator();
+	    	User user=auth.authUser(req.getParameter("username"), req.getParameter("password"), req.getParameter("type"));
+	    	if (user==null) {
+	    		res.sendRedirect("login_form.jsp?error=Incorrect username or password");
+	    	} else {
+	    		req.getSession(true).setAttribute("user", user);
+	    		req.getSession(true).setAttribute("loggedIn", true);
+	    		if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {
+	    			res.sendRedirect("index.do");
+	    		} else {
+	    			res.sendRedirect(req.getParameter("redirect"));
+	    		}
 		    }
 	    }
 	}

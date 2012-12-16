@@ -25,6 +25,7 @@ public class SetUserPropertyServlet extends HttpServlet {
 	    if (loggedIn) {
 	    	User user = (User) req.getSession().getAttribute("user");
 	    	user.setShowWelcomeMessage(Boolean.parseBoolean(req.getParameter("value")));
+	    	Globals.saveUsers();
 	    }
 	    if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {
 	    	res.sendRedirect("index.do");

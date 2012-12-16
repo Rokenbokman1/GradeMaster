@@ -8,11 +8,55 @@ import com.grademaster.data.objects.Config;
 import com.grademaster.data.xml.XMLConfigAdapter;
 import com.grademaster.logging.ErrorLevel;
 import com.grademaster.logging.Logger;
+import com.grademaster.data.objects.UserDataBase;
+import com.grademaster.data.xml.XMLUserDataBaseAdapter;
 
 public class Globals {
 	private static Config CON;
+	private static UserDataBase USERS;
+	private static XMLInterface USERINTERFACE;
 	private static Logger log;
 	private static String configURL = System.getProperty("user.dir")+System.getProperty("file.separator")+"xml/config.xml";
+	private static String userURL = System.getProperty("user.dir")+System.getProperty("file.sperator")+"xml/user.xml";
+	private static String loggerPath = System.getProperty("user.dir")+System.getProperty("file.sperator")+"GradeMaster.log";
+	//Saves cached users
+	public static void saveUsers() {
+		log.log("Saving user data...", ErrorLevel.INFO);
+		try {
+			USERINTERFACE.dumpData(USERS);
+		} catch (Exception e) {
+			log.log(e);
+		}
+	}
+	
+	// Forces a reload of the main user file
+		public static void updateUsers() {
+			log.log("Updating users...");
+			USERS = loadUsers();
+		}
+		//Loads config with cache
+		public static UserDataBase getUsers() {
+			log.log("Getting users...");
+			if (USERS == null) {
+				USERS = loadUsers();
+			}
+			return USERS;
+		}
+	
+	//Load users without cache
+	public static UserDataBase loadUsers() {
+		log.log("Loading users...", ErrorLevel.INFO);
+		if (USERINTERFACE==null) {
+			USERINTERFACE = new XMLInterface(new RawLocalLoader(userURL), new XMLUserDataBaseAdapter());
+		}
+			UserDataBase users = null;
+		try {
+			users = (UserDataBase) USERINTERFACE.getData();
+		} catch (Exception e) {
+			log.log(e);
+		}
+		return users;
+	}
 	
 	public static String getConfigURL() {
 		log.log("Globals returned config url.");
@@ -32,7 +76,8 @@ public class Globals {
 	public static Logger getLogger() {
 		if (log==null) {
 			try {
-				log = new Logger();
+				log = new Logger(loggerPath);
+				log.log("New logger initialized.");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -60,9 +105,23 @@ public class Globals {
 		try {
 			con = (Config) i.getData();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			log.log(e);
 		}
 		return con;
+	}
+	public static void setUserURL(String path) {
+		userURL=path;
+	}
+	public static String getUserURL() {
+		return userURL;
+	}
+
+	public static String getLoggerPath() {
+		return loggerPath;
+	}
+
+	public static void setLoggerPath(String loggerPath) {
+		Globals.loggerPath = loggerPath;
+		Globals.log=null;
 	}
 }
