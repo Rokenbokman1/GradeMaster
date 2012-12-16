@@ -1,3 +1,8 @@
+<%@ page import="com.grademaster.data.objects.*" %>
+<% User user=null;
+if ((Boolean) session.getAttribute("loggedIn")) {
+	user = (User) session.getAttribute("user");
+	}%>
 <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -7,7 +12,7 @@
 			<a class="btn btn-navbar" data-toggle="collapse"
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a> <a class="brand" href="#">@TEACHERNAME</a>
+			</a> <a class="brand" href="#">@<%= user.getName() %></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="#">Home</a></li>

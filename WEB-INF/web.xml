@@ -26,6 +26,15 @@
 </servlet-mapping>
 
 <servlet>
+	<servlet-name>propEdit</servlet-name>
+	<servlet-class>com.grademaster.servlets.SetUserPropertyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>propEdit</servlet-name>
+	<url-pattern>/edit_user.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
 	<servlet-name>indexServlet</servlet-name>
 	<servlet-class>com.grademaster.servlets.IndexServlet</servlet-class>
 </servlet>

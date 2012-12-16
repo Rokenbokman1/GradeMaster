@@ -6,6 +6,9 @@
 	
 	<div class="container">
 		<h2 align="center">Please Login</h2>
+		<% if (request.getParameter("error")!=null && request.getParameter("error")!="") { %>
+		<p align="center">Error: <%= request.getParameter("error") %></p>
+		<% } %>
 		<form align="center" action="login.do" method="post">
 			<fieldset>
 			<input type="text" name="username" placeholder="Username"><br>

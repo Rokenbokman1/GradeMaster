@@ -51,6 +51,16 @@
             p {
                 margin: 1em 0;
             }
+            
+           	a {
+           		text-decoration: underline;
+           		color: #737373;
+           	}
+           	
+           	a:hover {
+           		text-decoration: none;
+           		color: #7A7A7A;
+           	}
 
             ul {
                 padding: 0 0 0 40px;

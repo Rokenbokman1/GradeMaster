@@ -1,23 +1,30 @@
-
+<%@ page import="com.grademaster.data.objects.*" %>
+<%@ page import="com.grademaster.*" %>
+<% 
+Config iConfig = Globals.getConfig();
+User user=null;
+if ((Boolean) session.getAttribute("loggedIn")) {
+	user = (User) session.getAttribute("user");
+	}%>
 <jsp:include page="header.jsp" />
 <body>
 	<jsp:include page="teacher_nav.jsp" />
 
 
 	<div class="container">
-
+		<% if (user.isShowWelcomeMessage()) { %>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Welcome, @TEACHERNAME!</h1>
-			<p>Welcome to GradeMaster I mean! This is the place for you to
-				submit your student's grades in all your classes. I hope they're
-				doing well!</p>
+			<h1>Welcome, @<%= user.getName() %>!</h1>
+			<p>Welcome to <%= iConfig.name %>! This is the place for you to
+				submit your student's grades into the gradebook, manage calendars, and take attendance.  You may watch a tutorial to get started or close this message.</p>
 			<p>
-				<a class="btn btn-primary btn-large">Might Be Used For Something
-					but I'm afraid to remove it for it would be a pain to put back in.
+			<a href="edit_user.do?value=false" class="btn btn-primary btn-large">Close</a>
+				<a href="tutorial.jsp?t=teacher" class="btn btn-primary btn-large">Watch a quick start tutorial on how to use <%= iConfig.name %>.
 					&raquo;</a>
 			</p>
 		</div>
+		<% } %>
 
 		<!-- Example row of columns -->
 		<div class="row">
@@ -94,5 +101,9 @@
 				</p>
 			</div>
 		</div>
-
+		<% if (user.isShowWelcomeMessage()) { %>
+		<a href="edit_user.do?value=false">Hide welcome message</a>
+		<% } else { %>
+		<a href="edit_user.do?value=true">Show welcome message</a>
+		<% } %>
 		<jsp:include page="footer.jsp" />

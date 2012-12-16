@@ -14,10 +14,10 @@ Config iConfig = Globals.getConfig(); %>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">@<% if ((Boolean)session.getAttribute("loggedIn")) { %>
-                    <%= user.getName() %>
+                    <a class="brand" href="#"><% if ((Boolean)session.getAttribute("loggedIn")) { %>
+                    @<%= user.getName() %>
                     <% } else { %>
-                    <%= iConfig.name %>
+                    @<%= iConfig.name %>
                     <% } %></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
