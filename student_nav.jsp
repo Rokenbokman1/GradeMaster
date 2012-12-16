@@ -14,32 +14,35 @@ Config iConfig = Globals.getConfig(); %>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#"><% if ((Boolean)session.getAttribute("loggedIn")) { %>
+                    <a class="brand" href="index.do"><% if ((Boolean)session.getAttribute("loggedIn")) { %>
                     @<%= user.getName() %>
                     <% } else { %>
                     @<%= iConfig.name %>
                     <% } %></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="index.do">Home</a></li>
                             <% if ((Boolean) session.getAttribute("loggedIn")) { %>
-                            <li><a href="#todolist">To-Do List</a></li>
-                            <li><a href="#calendar">Calendar</a></li>
-                            <li><a href="#gradebook">Gradebook</a></li>
+                            <li><a href="todo.do">To-Do List</a></li>
+                            <li><a href="calendar.do">Calendar</a></li>
+                            <li><a href="gradebook.do">Gradebook</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
+                                <a href="classes_overview.do" class="dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#1">@CLASS1NAME</a></li>
-                                    <li><a href="#2">@CLASS2NAME</a></li>
-                                    <li><a href="#3">@CLASS3NAME</a></li>
-                                    <li><a href="#4">@CLASS4NAME</a></li>
-                                    <li><a href="#5">@CLASS5NAME</a></li>
+                                	<li><a href="classes_overview.do">Overview</a>
+                                	<li class="divider"></li>
+                                    <li class="nav-header">Core Classes</li>
+                                    <li><a href="class.do?id=1">@CLASS1NAME</a></li>
+                                    <li><a href="class.do?id=2">@CLASS2NAME</a></li>
+                                    <li><a href="class.do?id=3">@CLASS3NAME</a></li>
+                                    <li><a href="class.do?id=4">@CLASS4NAME</a></li>
+                                    <li><a href="class.do?id=5">@CLASS5NAME</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Specials</li>
-                                    <li><a href="#6">@CLASS6NAME</a></li>
-                                    <li><a href="#7">@CLASS7NAME</a></li>
-                                    <li><a href="#8">@CLASS8NAME</a></li>
-                                    <li><a href="#9">@CLASS9NAME</a></li>
+                                    <li><a href="class.do?id=6">@CLASS6NAME</a></li>
+                                    <li><a href="class.do?id=7">@CLASS7NAME</a></li>
+                                    <li><a href="class.do?id=8">@CLASS8NAME</a></li>
+                                    <li><a href="class.do?id=9">@CLASS9NAME</a></li>
                                 </ul>
                             </li>
                             <% } %>

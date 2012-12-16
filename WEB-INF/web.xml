@@ -60,6 +60,15 @@
 	<url-pattern>/logout.do</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>typeServlet</servlet-name>
+	<servlet-class>com.grademaster.servlets.UserTypeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>typeServlet</servlet-name>
+	<url-pattern>/user_type.do</url-pattern>
+</servlet-mapping>
+
 <error-page>
 	<error-code>404</error-code>
 	<location>/err/err_404.jsp</location>

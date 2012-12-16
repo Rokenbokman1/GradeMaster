@@ -24,4 +24,13 @@ public class Authenticator {
 		}
 		return user;
 	}
+	public String typeUser(String uname) {
+		ArrayList<User> aUsers = users.getUsers();
+		for (User u : aUsers) {
+			if (u.getUsername().equals(uname)) {
+				return u.getUserType();
+			}
+		}
+		return null;
+	}
 }

@@ -12,22 +12,25 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 			<a class="btn btn-navbar" data-toggle="collapse"
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a> <a class="brand" href="#">@<%= user.getName() %></a>
+			</a> <a class="brand" href="index.do">@<%= user.getName() %></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#createassignment">Create Assignment</a></li>
-					<li><a href="#calendar">Calendar</a></li>
-					<li><a href="#gradebook">Gradebook</a></li>
-					<li><a href="#attendance">Attendance</a></li>
+					<li class="active"><a href="index.do">Home</a></li>
+					<li><a href="create_assignment.do">Create Assignment</a></li>
+					<li><a href="teacher_calendar.do">Calendar</a></li>
+					<li><a href="teacher_gradebook.do">Gradebook</a></li>
+					<li><a href="attendance.do">Attendance</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Classes <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#1">@CLASS1NAME</a></li>
-							<li><a href="#2">@CLASS2NAME</a></li>
-							<li><a href="#3">@CLASS3NAME</a></li>
-							<li><a href="#4">@CLASS4NAME</a></li>
-							<li><a href="#5">@CLASS5NAME</a></li>
+                            <li><a href="classes_overview.do">Overview</a>
+                            <li class="divider"></li>
+                            <li class="nav-header">Classes</li>
+							<li><a href="teacher_class.do?id=1">@CLASS1NAME</a></li>
+							<li><a href="teacher_class.do?id=2">@CLASS2NAME</a></li>
+							<li><a href="teacher_class.do?id=3">@CLASS3NAME</a></li>
+							<li><a href="teacher_class.do?id=4">@CLASS4NAME</a></li>
+							<li><a href="teacher_class.do?id=5">@CLASS5NAME</a></li>
 						</ul></li>
 				</ul>
 				<% if ((Boolean) session.getAttribute("loggedIn")==true) {%>
