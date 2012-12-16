@@ -20,7 +20,7 @@ student
 0
 </uid>
 <showWelcome>
-false
+true
 </showWelcome>
 
 </user>
@@ -44,7 +44,7 @@ teacher
 1
 </uid>
 <showWelcome>
-false
+true
 </showWelcome>
 
 </user>
