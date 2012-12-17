@@ -1,6 +1,7 @@
 package com.grademaster.data.xml;
 
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -18,32 +19,54 @@ import org.w3c.dom.NodeList;
 
 import com.grademaster.Globals;
 import com.grademaster.data.IDataObject;
+import com.grademaster.data.objects.ClassDataBase;
+import com.grademaster.data.objects.ClassSection;
+import com.grademaster.data.objects.MyClass;
 import com.grademaster.data.objects.User;
 import com.grademaster.data.objects.UserDataBase;
+import com.grademaster.logging.ErrorLevel;
 
-public class XMLUserDataBaseAdapter implements IXMLAdapter {
+public class XMLClassDataBaseAdapter implements IXMLAdapter {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public IDataObject dataToObject(Object o) {
-		Globals.getLogger().log("Converting XML data to UserDataBase object...");
+		Globals.getLogger().log("Converting XML data to ClassDataBase object...");
 		
-		UserDataBase base = new UserDataBase();
+		ClassDataBase base = new ClassDataBase();
 		
 		Document doc = (Document) o;
 		
-		NodeList users = doc.getElementsByTagName("user");
+		NodeList classes = doc.getElementsByTagName("class");
 		
-		for (int i=0;i<users.getLength();i++) {
-			HashMap<String,String> map = new HashMap<String,String>();
+		for (int i=0;i<classes.getLength();i++) {
+			HashMap<String,Object> map = new HashMap<String,Object>();
 			
-			Node userNode = users.item(i);
-			for (int u=0;u<userNode.getChildNodes().getLength();u++) {
-				Node n = userNode.getChildNodes().item(u);
-				//Used for debugging - Globals.getLogger().log("Processing - " + n.getNodeName()+": " + n.getTextContent());
-				map.put(n.getNodeName(), n.getTextContent());					
+			Node classNode = classes.item(i);
+			for (int u=0;u<classNode.getChildNodes().getLength();u++) {
+				Node n = classNode.getChildNodes().item(u);
+				if (!n.getNodeName().equals("sections")) {
+					//Used for debugging - Globals.getLogger().log("Processing - " + n.getNodeName()+": " + n.getTextContent());
+					map.put(n.getNodeName(), n.getTextContent());
+				} else {
+					HashMap<String,String> map2 = new HashMap<String,String>();
+					for (int u2=0;u2<n.getChildNodes().getLength();u2++) {
+						Node n2=n.getChildNodes().item(u2);
+						map2.put(n2.getNodeName(), n2.getTextContent());
+					}
+					ArrayList<ClassSection> sections;
+					
+					if (map.containsKey("sections")) {
+						sections = (ArrayList<ClassSection>) map.get("sections");
+					} else {
+						sections = new ArrayList<ClassSection>();
+					}
+					sections.add(new ClassSection(map2.get("sid"), map2.get("name"), (String) map.get("cid"), Integer.parseInt(map2.get("value")), map2.get("desc")));
+					map.put("sections", sections);
+				}
 			}
-			User user= User.getInstance(map.get("uname"), map.get("pword"), map.get("fname"), map.get("lname"), map.get("uid"), map.get("type"), Boolean.parseBoolean(map.get("showWelcome")));
-			base.addObject(user);
+			MyClass iClass = new MyClass((String) map.get("cid"),(String) map.get("uid"),(String) map.get("name"),(String) map.get("loc"),(String) map.get("desc"),(ArrayList<ClassSection>) map.get("sections"));
+			base.addObject(iClass);
 		}
 		
 		return base;
@@ -52,8 +75,10 @@ public class XMLUserDataBaseAdapter implements IXMLAdapter {
 	@Override
 	public String objectToData(Object o) throws ParserConfigurationException,
 			Exception {
-		Globals.getLogger().log("Converting UserDataBase object to String (should be XML)...");
-		
+		Globals.getLogger().log("Converting ClassDataBase object to String (should be XML)...");
+		Globals.getLogger().log("UserDataBase to data not ready yet!", ErrorLevel.WARNING);
+		return null;
+		/* Might use later
 		//Cast object to config
 		UserDataBase users = (UserDataBase) o;
 		
@@ -68,8 +93,8 @@ public class XMLUserDataBaseAdapter implements IXMLAdapter {
 		//Create config element
 		Element xml = rootElement;
 		
-		for (Object user1 : users.getObjects()) {
-			User user = (User) user1;
+		for (Object user1 : users.getObjects()) {	
+			User user= (User) user1;
 			
 			Element u = doc.createElement("user");
 			xml.appendChild(u);
@@ -111,7 +136,7 @@ public class XMLUserDataBaseAdapter implements IXMLAdapter {
 		      new StreamResult(buffer));
 		String str = buffer.toString().replace(">", ">\n").replace("</", "\n</");
 		
-		return str;
+		return str;*/
 	}
 
 }

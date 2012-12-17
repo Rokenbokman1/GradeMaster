@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 
 import com.grademaster.data.RawLocalLoader;
 import com.grademaster.data.XMLInterface;
+import com.grademaster.data.objects.ClassDataBase;
 import com.grademaster.data.objects.Config;
+import com.grademaster.data.xml.XMLClassDataBaseAdapter;
 import com.grademaster.data.xml.XMLConfigAdapter;
 import com.grademaster.logging.ErrorLevel;
 import com.grademaster.logging.Logger;
@@ -16,9 +18,52 @@ public class Globals {
 	private static UserDataBase USERS;
 	private static XMLInterface USERINTERFACE;
 	private static Logger log;
-	private static String configURL = System.getProperty("user.dir")+System.getProperty("file.separator")+"xml/config.xml";
-	private static String userURL = System.getProperty("user.dir")+System.getProperty("file.sperator")+"xml/user.xml";
-	private static String loggerPath = System.getProperty("user.dir")+System.getProperty("file.sperator")+"GradeMaster.log";
+	private static ClassDataBase CLASSES;
+	private static String configURL = System.getProperty("user.dir")+"/xml/Config.xml";
+	private static String userURL = System.getProperty("user.dir")+"/xml/Users.xml";
+	private static String loggerPath = System.getProperty("user.dir")+"/xml/Classes.xml";
+	private static XMLInterface CLASSINTERFACE;
+	private static String classURL;
+	
+	public static void setClassURL(String classURL) {
+		Globals.classURL=classURL;
+		CLASSINTERFACE=null;
+		CLASSES=null;
+	}
+	
+	public static String getClassURL() {
+		return classURL;
+	}
+	
+	// Forces a reload of the main user file
+	public static void updateClasses() {
+		log.log("Updating classes...");
+		CLASSES = loadClasses();
+	}
+	//Loads config with cache
+	public static ClassDataBase getClasses() {
+		log.log("Getting classes...");
+		if (CLASSES == null) {
+			CLASSES = loadClasses();
+		}
+		return CLASSES;
+	}
+
+	//Load users without cache
+	public static ClassDataBase loadClasses() {
+		log.log("Loading classes...", ErrorLevel.INFO);
+		if (CLASSINTERFACE==null) {
+			CLASSINTERFACE = new XMLInterface(new RawLocalLoader(classURL), new XMLClassDataBaseAdapter());
+		}
+		ClassDataBase classes = null;
+		try {
+			classes = (ClassDataBase) CLASSINTERFACE.getData();
+		} catch (Exception e) {
+			log.log(e);
+		}
+		return classes;
+	}
+
 	//Saves cached users
 	public static void saveUsers() {
 		log.log("Saving user data...", ErrorLevel.INFO);
@@ -28,28 +73,28 @@ public class Globals {
 			log.log(e);
 		}
 	}
-	
+
 	// Forces a reload of the main user file
-		public static void updateUsers() {
-			log.log("Updating users...");
+	public static void updateUsers() {
+		log.log("Updating users...");
+		USERS = loadUsers();
+	}
+	//Loads config with cache
+	public static UserDataBase getUsers() {
+		log.log("Getting users...");
+		if (USERS == null) {
 			USERS = loadUsers();
 		}
-		//Loads config with cache
-		public static UserDataBase getUsers() {
-			log.log("Getting users...");
-			if (USERS == null) {
-				USERS = loadUsers();
-			}
-			return USERS;
-		}
-	
+		return USERS;
+	}
+
 	//Load users without cache
 	public static UserDataBase loadUsers() {
 		log.log("Loading users...", ErrorLevel.INFO);
 		if (USERINTERFACE==null) {
 			USERINTERFACE = new XMLInterface(new RawLocalLoader(userURL), new XMLUserDataBaseAdapter());
 		}
-			UserDataBase users = null;
+		UserDataBase users = null;
 		try {
 			users = (UserDataBase) USERINTERFACE.getData();
 		} catch (Exception e) {
@@ -57,12 +102,12 @@ public class Globals {
 		}
 		return users;
 	}
-	
+
 	public static String getConfigURL() {
 		log.log("Globals returned config url.");
 		return configURL;
 	}
-	
+
 	public static void setConfigURL(String u) {
 		log.log("Globals sets config url.");
 		if (u==configURL) {

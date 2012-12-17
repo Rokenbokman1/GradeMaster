@@ -15,5 +15,7 @@ public class InitServlet extends HttpServlet {
 		Globals.setConfigURL(getServletContext().getRealPath("/xml/Config.xml"));
 		log.log("Configuring user path...",ErrorLevel.INFO);
 		Globals.setUserURL(getServletContext().getRealPath("/xml/Users.xml"));
+		log.log("Configuring classes path...",ErrorLevel.INFO);
+		Globals.setClassURL(getServletContext().getRealPath("/xml/Classes.xml"));
 	}
 }

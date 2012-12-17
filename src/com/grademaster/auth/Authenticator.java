@@ -15,11 +15,12 @@ public class Authenticator {
 		this(Globals.getUsers());
 	}
 	public User authUser(String uname, String pword, String type) {
-		ArrayList<User> aUsers = users.getUsers();
+		ArrayList<Object> aUsers = users.getObjects();
 		User user = null;
 		Hasher h = new Hasher(pword);
 		String hpword=h.getHashed();
-		for (User u : aUsers) {
+		for (Object u1 : aUsers) {
+			User u = (User) u1;
 			if (u.getUsername().equals(uname) && u.getPassword().equals(hpword) && u.getUserType().equals(type)) {
 				user=u;
 			}
@@ -27,8 +28,9 @@ public class Authenticator {
 		return user;
 	}
 	public String typeUser(String uname) {
-		ArrayList<User> aUsers = users.getUsers();
-		for (User u : aUsers) {
+		ArrayList<Object> aUsers = Globals.getUsers().getObjects();
+		for (Object u1 : aUsers) {
+			User u = (User) u1;
 			if (u.getUsername().equals(uname)) {
 				return u.getUserType();
 			}

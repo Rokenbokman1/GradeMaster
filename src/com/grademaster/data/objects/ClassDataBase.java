@@ -2,11 +2,11 @@ package com.grademaster.data.objects;
 
 import java.util.ArrayList;
 
-public class UserDataBase extends DataBase {
-	public UserDataBase (ArrayList<Object> users) {
+public class ClassDataBase extends DataBase {
+	public ClassDataBase (ArrayList<Object> users) {
 		super(users);
 	}
-	public UserDataBase () {
+	public ClassDataBase () {
 		this(new ArrayList<Object>());
 	}
 	
