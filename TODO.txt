@@ -3,16 +3,3 @@ We need:
 Proof of concept by: January 2, 2013
 Working Core by: (Projected) End of 2014 - 2015 School Year - Begin Implimentation during 2015 Summer
 Final Core: (Projected) End of 2015 - 2016 School Year - Fully Impliment and Begin to release patches
-
-Feature to-do:
-
-Class add
-SQL storage
-login working
-Fully working:
-	Calandar Page
-	Grading Page
-	Grade Overview Page
-	To-Do List Page
-	Gradebook Page
-Easy Copy Assignments
