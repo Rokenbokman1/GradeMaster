@@ -1,3 +1,7 @@
+RE-ADD GradeMaster.log
+NOW.
+
+
 We need:
 
 Proof of concept by: January 2, 2013
