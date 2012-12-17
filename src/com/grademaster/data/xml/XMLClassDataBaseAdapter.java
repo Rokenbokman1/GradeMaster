@@ -61,7 +61,7 @@ public class XMLClassDataBaseAdapter implements IXMLAdapter {
 					} else {
 						sections = new ArrayList<ClassSection>();
 					}
-					sections.add(new ClassSection(map2.get("sid"), map2.get("name"), (String) map.get("cid"), Integer.parseInt(map2.get("value")), map2.get("desc")));
+					sections.add(new ClassSection(map2.get("sid"), map2.get("name"), (String) map2.get("cid"), map2.get("value"), map2.get("desc")));
 					map.put("sections", sections);
 				}
 			}

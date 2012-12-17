@@ -1,5 +1,6 @@
 <%@ page import="com.grademaster.data.objects.*" %>
 <%@ page import="com.grademaster.*" %>
+<%@ page import="java.util.ArrayList" %>
 <% 
 Config iConfig = Globals.getConfig();
 User user=null;
@@ -31,11 +32,21 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 			<div class="span4">
 				<h2>Grade Overview</h2>
 				<div class="column>">
-					<li><a href="#1">@CLASS1NAME</a> | @CLASS1GRADE</li>
-					<li><a href="#2">@CLASS2NAME</a> | @CLASS2GRADE</li>
-					<li><a href="#3">@CLASS3NAME</a> | @CLASS3GRADE</li>
-					<li><a href="#4">@CLASS4NAME</a> | @CLASS4GRADE</li>
-					<li><a href="#5">@CLASS5NAME</a> | @CLASS5GRADE</li> <br>
+				<ul>
+					<%
+					ClassDataBase base = Globals.getClasses();
+					ArrayList<MyClass> classes	= new ArrayList<MyClass>();
+					for (int i=0;i<base.getObjects().size();i++) {
+						MyClass iClass = (MyClass) base.getObject(i);
+						if (iClass.getUid().equals(user.getUid())) {
+							classes.add(iClass);
+						}
+					}
+					for (MyClass iClass : classes) {
+					%>
+					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>">@<%= iClass.getName() %></a> | @CLASS1GRADE</li>
+					<% } %>
+				</ul>
 				</div>
 				<p>
 					<a class="btn" href="#gradebook">Full Gradebook &raquo;</a>

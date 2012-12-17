@@ -1,4 +1,6 @@
 <%@ page import="com.grademaster.data.objects.*" %>
+<%@ page import="com.grademaster.*" %>
+<%@ page import="java.util.ArrayList" %>
 <% User user=null;
 if ((Boolean) session.getAttribute("loggedIn")) {
 	user = (User) session.getAttribute("user");
@@ -26,11 +28,19 @@ if ((Boolean) session.getAttribute("loggedIn")) {
                             <li><a href="classes_overview.do">Overview</a>
                             <li class="divider"></li>
                             <li class="nav-header">Classes</li>
-							<li><a href="teacher_class.do?id=1">@CLASS1NAME</a></li>
-							<li><a href="teacher_class.do?id=2">@CLASS2NAME</a></li>
-							<li><a href="teacher_class.do?id=3">@CLASS3NAME</a></li>
-							<li><a href="teacher_class.do?id=4">@CLASS4NAME</a></li>
-							<li><a href="teacher_class.do?id=5">@CLASS5NAME</a></li>
+                            <%
+							ClassDataBase base = Globals.getClasses();
+							ArrayList<MyClass> classes	= new ArrayList<MyClass>();
+							for (int i=0;i<base.getObjects().size();i++) {
+								MyClass iClass = (MyClass) base.getObject(i);
+								if (iClass.getUid().equals(user.getUid())) {
+									classes.add(iClass);
+								}
+							}
+							for (MyClass iClass : classes) {
+							%>
+							<li><a href="teacher_class.do?id=<%= iClass.getCid() %>">@<%= iClass.getName() %></a></li>
+							<% } %>
 						</ul></li>
 				</ul>
 				<% if ((Boolean) session.getAttribute("loggedIn")==true) {%>

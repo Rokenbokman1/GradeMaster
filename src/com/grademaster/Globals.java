@@ -21,9 +21,9 @@ public class Globals {
 	private static ClassDataBase CLASSES;
 	private static String configURL = System.getProperty("user.dir")+"/xml/Config.xml";
 	private static String userURL = System.getProperty("user.dir")+"/xml/Users.xml";
-	private static String loggerPath = System.getProperty("user.dir")+"/xml/Classes.xml";
+	private static String loggerPath = System.getProperty("user.dir")+"/GradeMaster.log";
 	private static XMLInterface CLASSINTERFACE;
-	private static String classURL;
+	private static String classURL = System.getProperty("user.dir")+"/xml/Classes.xml";
 	
 	public static void setClassURL(String classURL) {
 		Globals.classURL=classURL;

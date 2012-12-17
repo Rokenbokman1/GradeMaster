@@ -5,14 +5,14 @@ import com.grademaster.data.IDataObject;
 public class ClassSection implements IDataObject {
 		private final String sid;
 		private final String cid;
-		private int value;
+		private String value;
 		private String desc;
 		private String name;
-		public ClassSection(String sid,String name, String cid, int value, String desc) {
+		public ClassSection(String sid,String name, String cid, String string, String desc) {
 			this.sid=sid;
-			this.name=name;
+			this.setName(name);
 			this.cid=cid;
-			this.setValue(value);
+			this.setValue(string);
 			this.setDesc(desc);
 		}
 		public String getSid() {
@@ -21,10 +21,10 @@ public class ClassSection implements IDataObject {
 		public String getCid() {
 			return cid;
 		}
-		public int getValue() {
+		public String getValue() {
 			return value;
 		}
-		public void setValue(int value) {
+		public void setValue(String value) {
 			this.value = value;
 		}
 		public String getDesc() {
@@ -32,5 +32,11 @@ public class ClassSection implements IDataObject {
 		}
 		public void setDesc(String desc) {
 			this.desc = desc;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
 		}
 }

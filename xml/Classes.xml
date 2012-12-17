@@ -1,2 +1,26 @@
-[Sun Dec 16 20:02:44 MST 2012] [DEBUG] New logger initialized.
-[Sun Dec 16 20:02:45 MST 2012] [DEBUG] 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classes>
+	<class>
+		<cid>0</cid>
+		<uid>1</uid>
+		<name>Language Arts</name>
+		<loc>Room 316</loc>
+		<desc>A test class to demo</desc>
+		<sections>
+			<section>
+				<sid>0</sid>
+				<cid>0</cid>
+				<name>Grammer</name>
+				<value>50</value>
+				<desc>A test section 1</desc>
+			</section>
+			<section>
+				<sid>1</sid>
+				<cid>0</cid>
+				<name>Writing</name>
+				<value>50</value>
+				<desc>A test section 2</desc>
+			</section>
+		</sections>
+	</class>
+</classes>
