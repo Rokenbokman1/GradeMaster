@@ -16,7 +16,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 		<% if (user.isShowWelcomeMessage()) { %>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Welcome, @<%= user.getName() %>!</h1>
+			<h1>Welcome, <%= user.getName() %>!</h1>
 			<p>Welcome to <%= iConfig.name %>! This is the place for you to
 				submit your student's grades into the gradebook, manage calendars, and take attendance.  You may watch a tutorial to get started or close this message.</p>
 			<p>

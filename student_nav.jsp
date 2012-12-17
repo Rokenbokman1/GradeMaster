@@ -15,9 +15,9 @@ Config iConfig = Globals.getConfig(); %>
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="index.do"><% if (session.getAttribute("loggedIn")!=null&&(Boolean)session.getAttribute("loggedIn")==true) { %>
-                    @<%= user.getName() %>
+                    <%= user.getName() %>
                     <% } else { %>
-                    @<%= iConfig.name %>
+                    <%= iConfig.name %>
                     <% } %></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
