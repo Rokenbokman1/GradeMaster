@@ -45,6 +45,8 @@ Config iConfig = Globals.getConfig(); %>
                                     <li><a href="class.do?id=9">@CLASS9NAME</a></li>
                                 </ul>
                             </li>
+                            <% } else { %>
+                            	<li><a href="tutorial.jsp">Tutorials</a></li>
                             <% } %>
                         </ul>
                         <% if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) {%>

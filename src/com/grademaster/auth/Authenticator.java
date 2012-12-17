@@ -17,8 +17,10 @@ public class Authenticator {
 	public User authUser(String uname, String pword, String type) {
 		ArrayList<User> aUsers = users.getUsers();
 		User user = null;
+		Hasher h = new Hasher(pword);
+		String hpword=h.getHashed();
 		for (User u : aUsers) {
-			if (u.getUsername().equals(uname) && u.getPassword().equals(pword) && u.getUserType().equals(type)) {
+			if (u.getUsername().equals(uname) && u.getPassword().equals(hpword) && u.getUserType().equals(type)) {
 				user=u;
 			}
 		}

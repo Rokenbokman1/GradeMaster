@@ -1,6 +1,6 @@
 package com.grademaster;
 
-import com.grademaster.logging.*;
+import com.grademaster.auth.Hasher;
 
 //Author: Jake Billings
 //Date created: 12-13-2012
@@ -9,8 +9,7 @@ import com.grademaster.logging.*;
 
 public class Tester {
 	public static void main(String[] args) {
-		Logger log =Globals.getLogger();
-		log.log("Loading config...");
-		log.log(Globals.getConfig().metadata.version);
+		Hasher h = new Hasher("test");
+		Globals.getLogger().log(h.getHashed());
 	}
 }

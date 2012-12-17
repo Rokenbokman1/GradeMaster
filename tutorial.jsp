@@ -3,7 +3,7 @@
 <% 
 Config iConfig = Globals.getConfig();
 User user=null;
-if ((Boolean) session.getAttribute("loggedIn")) {
+if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn")) {
 	user = (User) session.getAttribute("user");
 	}
 String tutorial = "both";
@@ -18,7 +18,7 @@ if (!(request.getParameter("t")==null || request.getParameter("t") =="")) {
 	
 <jsp:include page="header.jsp" />
 <body>
-	<% if (user != null && user.getUserType().equals("teacher")) { %>
+	<% if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn") == true && user.getUserType().equals("teacher")) { %>
 		<jsp:include page="teacher_nav.jsp" />
 	<% } else { %>
 		<jsp:include page="student_nav.jsp" />
