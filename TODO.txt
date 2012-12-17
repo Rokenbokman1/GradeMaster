@@ -21,3 +21,7 @@ Fully working:
 	To-Do List Page
 	Gradebook Page
 Easy Copy Assignments
+Rearrangable Seating Chart
+get favicon working
+	Waiting for Jake to impliment
+
