@@ -18,5 +18,7 @@ Fri Dec 14 21:07:35 MST 2012
 <logo>
 /img/logo.png
 </logo>
-
+<namePrefix>
+#
+</namePrefix>
 </config>

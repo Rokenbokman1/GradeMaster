@@ -16,7 +16,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 		<% if (user.isShowWelcomeMessage()) { %>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Welcome, @<%= user.getName() %>!</h1>
+			<h1>Welcome, <%= iConfig.namePrefix %><%= user.getName() %>!</h1>
 			<p>Welcome to <%= iConfig.name %>! This is the place for you to
 				submit your student's grades into the gradebook, manage calendars, and take attendance.  You may watch a tutorial to get started or close this message.</p>
 			<p>
@@ -44,7 +44,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 					}
 					for (MyClass iClass : classes) {
 					%>
-					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>">@<%= iClass.getName() %></a> | @CLASS1GRADE</li>
+					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a> | <%= iConfig.namePrefix %>CLASS1GRADE</li>
 					<% } %>
 				</ul>
 				</div>
@@ -57,11 +57,11 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				<form>
 					<select name="quikcreateclassselect">
 						<option selected>Select A Class</option>
-						<option value="quikcreateselectclass1">@CLASS1NAME</option>
-						<option value="quikcreateselectclass2">@CLASS2NAME</option>
-						<option value="quikcreateselectclass3">@CLASS3NAME</option>
-						<option value="quikcreateselectclass4">@CLASS4NAME</option>
-						<option value="quikcreateselectclass5">@CLASS5NAME</option>
+						<option value="quikcreateselectclass1"><%= iConfig.namePrefix %>CLASS1NAME</option>
+						<option value="quikcreateselectclass2"><%= iConfig.namePrefix %>CLASS2NAME</option>
+						<option value="quikcreateselectclass3"><%= iConfig.namePrefix %>CLASS3NAME</option>
+						<option value="quikcreateselectclass4"><%= iConfig.namePrefix %>CLASS4NAME</option>
+						<option value="quikcreateselectclass5"><%= iConfig.namePrefix %>CLASS5NAME</option>
 					</select> <input type="text" name="quikcreatename"
 						placeholder="Assignment Name"> <input type="date"
 						name="quikcreateduedate" placeholder="Assignment Due-Date">
@@ -85,18 +85,18 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				<form>
 					<select name="quikattendanceclass">
 						<option selected>Choose a Class</option>
-						<option value="quikattendance@CLASS1NAME">@CLASS1NAME</option>
-						<option value="quikattendance@CLASS2NAME">@CLASS2NAME</option>
-						<option value="quikattendance@CLASS3NAME">@CLASS3NAME</option>
-						<option value="quikattendance@CLASS4NAME">@CLASS4NAME</option>
-						<option value="quikattendance@CLASS5NAME">@CLASS5NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>CLASS1NAME"><%= iConfig.namePrefix %>CLASS1NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>CLASS2NAME"><%= iConfig.namePrefix %>CLASS2NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>CLASS3NAME"><%= iConfig.namePrefix %>CLASS3NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>CLASS4NAME"><%= iConfig.namePrefix %>CLASS4NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>CLASS5NAME"><%= iConfig.namePrefix %>CLASS5NAME</option>
 					</select> <select name="quikattendancestudent">
 						<option selected>Select a Student</option>
-						<option value="quikattendance@STUDENT1NAME">@STUDENT1NAME</option>
-						<option value="quikattendance@STUDENT2NAME">@STUDENT2NAME</option>
-						<option value="quikattendance@STUDENT3NAME">@STUDENT3NAME</option>
-						<option value="quikattendance@STUDENT4NAME">@STUDENT4NAME</option>
-						<option value="quikattendance@STUDENT5NAME">@STUDENT5NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT1NAME"><%= iConfig.namePrefix %>STUDENT1NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT2NAME"><%= iConfig.namePrefix %>STUDENT2NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT3NAME"><%= iConfig.namePrefix %>STUDENT3NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT4NAME"><%= iConfig.namePrefix %>STUDENT4NAME</option>
+						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT5NAME"><%= iConfig.namePrefix %>STUDENT5NAME</option>
 					</select>
 					<p>Remember, Present until proven Absent!</p>
 					<select name="quikattendanceselect">

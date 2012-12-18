@@ -30,8 +30,9 @@ public class XMLConfigAdapter implements IXMLAdapter {
 		String date= doc.getElementsByTagName("date").item(0).getTextContent();
 		String version= doc.getElementsByTagName("version").item(0).getTextContent();
 		String logoPath= doc.getElementsByTagName("logo").item(0).getTextContent();
+		String namePrefix= doc.getElementsByTagName("namePrefix").item(0).getTextContent();
 		
-		Config con = new Config(name,author,date,version,logoPath);
+		Config con = new Config(name,author,date,version,logoPath,namePrefix);
 		
 		return con;
 	}
@@ -92,6 +93,10 @@ public class XMLConfigAdapter implements IXMLAdapter {
 		Element logoPath = doc.createElement("logo");
 		logoPath.appendChild(doc.createTextNode(con.logoPath));
 		config.appendChild(logoPath);
+		
+		Element namePrefix = doc.createElement("namePrefix");
+		namePrefix.appendChild(doc.createTextNode(con.namePrefix));
+		config.appendChild(namePrefix);
 		
 		TransformerFactory transFactory = TransformerFactory.newInstance();
 		Transformer transformer = transFactory.newTransformer();

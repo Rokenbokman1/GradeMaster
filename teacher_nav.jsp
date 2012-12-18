@@ -4,7 +4,9 @@
 <% User user=null;
 if ((Boolean) session.getAttribute("loggedIn")) {
 	user = (User) session.getAttribute("user");
-	}%>
+	}
+Config iConfig = Globals.getConfig();
+	%>
 <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -14,7 +16,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 			<a class="btn btn-navbar" data-toggle="collapse"
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a> <a class="brand" href="index.do">@<%= user.getName() %></a>
+			</a> <a class="brand" href="index.do"><%= iConfig.namePrefix %><%= user.getName() %></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="index.do">Home</a></li>
@@ -39,7 +41,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 					}
 					for (MyClass iClass : classes) {
 					%>
-					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>">@<%= iClass.getName() %></a></li>
+					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a></li>
 					<% } %>
 						</ul></li>
 				</ul>

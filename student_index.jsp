@@ -14,7 +14,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 		<% if (user.isShowWelcomeMessage()) { %>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Welcome, @<%= user.getName() %>!</h1>
+			<h1>Welcome, <%= iConfig.namePrefix %><%= user.getName() %>!</h1>
 			<p>Welcome to <%= iConfig.name %>! This is the place for you to
 				submit your student's grades into the gradebook, manage calendars, and take attendance.  You may watch a tutorial to get started or close this message.</p>
 			<p>
@@ -30,16 +30,16 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 			<div class="span4">
 				<h2>Grade Overview</h2>
 				<div class="column>">
-					<li><a href="#1">@CLASS1NAME</a> | @CLASS1GRADE</li>
-					<li><a href="#2">@CLASS2NAME</a> | @CLASS2GRADE</li>
-					<li><a href="#3">@CLASS3NAME</a> | @CLASS3GRADE</li>
-					<li><a href="#4">@CLASS4NAME</a> | @CLASS4GRADE</li>
-					<li><a href="#5">@CLASS5NAME</a> | @CLASS5GRADE</li>
+					<li><a href="#1"><%= iConfig.namePrefix %>CLASS1NAME</a> | <%= iConfig.namePrefix %>CLASS1GRADE</li>
+					<li><a href="#2"><%= iConfig.namePrefix %>CLASS2NAME</a> | <%= iConfig.namePrefix %>CLASS2GRADE</li>
+					<li><a href="#3"><%= iConfig.namePrefix %>CLASS3NAME</a> | <%= iConfig.namePrefix %>CLASS3GRADE</li>
+					<li><a href="#4"><%= iConfig.namePrefix %>CLASS4NAME</a> | <%= iConfig.namePrefix %>CLASS4GRADE</li>
+					<li><a href="#5"><%= iConfig.namePrefix %>CLASS5NAME</a> | <%= iConfig.namePrefix %>CLASS5GRADE</li>
 					<li class="nav-header">Specials</li>
-					<li><a href="#6">@CLASS6NAME</a> | @CLASS6GRADE</li>
-					<li><a href="#7">@CLASS7NAME</a> | @CLASS7GRADE</li>
-					<li><a href="#8">@CLASS8NAME</a> | @CLASS8GRADE</li>
-					<li><a href="#9">@CLASS9NAME</a> | @CLASS9GRADE</li> <br>
+					<li><a href="#6"><%= iConfig.namePrefix %>CLASS6NAME</a> | <%= iConfig.namePrefix %>CLASS6GRADE</li>
+					<li><a href="#7"><%= iConfig.namePrefix %>CLASS7NAME</a> | <%= iConfig.namePrefix %>CLASS7GRADE</li>
+					<li><a href="#8"><%= iConfig.namePrefix %>CLASS8NAME</a> | <%= iConfig.namePrefix %>CLASS8GRADE</li>
+					<li><a href="#9"><%= iConfig.namePrefix %>CLASS9NAME</a> | <%= iConfig.namePrefix %>CLASS9GRADE</li> <br>
 				</div>
 				<p>
 					<a class="btn" href="#gradebook">Full Gradebook &raquo;</a>
@@ -47,14 +47,14 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 			</div>
 			<div class="span4">
 				<h2>To-Do List Overview</h2>
-				<p>@TODOLIST</p>
+				<p><%= iConfig.namePrefix %>TODOLIST</p>
 				<p>
 					<a class="btn" href="#todolist">Full To-Do List &raquo;</a>
 				</p>
 			</div>
 			<div class="span4">
 				<h2>Calendar Events</h2>
-				<p>@CALENDARLIST</p>
+				<p><%= iConfig.namePrefix %>CALENDARLIST</p>
 				<p>
 					<a class="btn" href="#">Full Calendar &raquo;</a>
 				</p>

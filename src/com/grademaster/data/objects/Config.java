@@ -12,8 +12,9 @@ public class Config implements IDataObject {
 	public String name;
 	public String logoPath;
 	public Metadata metadata;
+	public String namePrefix;
 	
-	public Config(String name,String author,String date,String version,String logoPath) {
+	public Config(String name,String author,String date,String version,String logoPath,String namePrefix) {
 		Globals.getLogger().log("Created new Config object.");
 		this.name=name;
 		this.metadata=new Metadata();
@@ -21,6 +22,7 @@ public class Config implements IDataObject {
 		this.metadata.date=date;
 		this.metadata.version=version;
 		this.logoPath=logoPath;
+		this.namePrefix=namePrefix;
 	}
 	//Stores data for the metadata
 	public class Metadata implements IDataObject {
