@@ -22,5 +22,26 @@
 <body>
 	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
-	
+	<h2>Classes Overview</h2>
+	<%
+	for (MyClass c : classes) {
+	%>
+	<h3><%= iConfig.namePrefix %><a href="teacher_class.jsp?id=<%= c.getCid() %>"><%= c.getName() %> &#62;&#62;</a></h3>
+		<table style="margin-left: 30px; cell-padding: 10px;background-color:#F0F0F0;width:100%">
+		<tr>
+			<td style="width:50%">ID</td>
+			<td><%= c.getCid() %></td>
+		</tr>
+		<tr>
+			<td style="width:50%">Location</td>
+			<td><%= c.getLoc() %></td>
+		</tr>
+		<tr>
+			<td style="width:50%">Description</td>
+			<td><%= c.getDesc() %></td>
+		</tr>
+	</table>
+	<%	
+	}
+	%>
 <jsp:include page="footer.jsp" />

@@ -23,6 +23,7 @@
 	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
 	<h2>Class Overview: <%= iConfig.namePrefix %><%= iClass.getName() %></h2>
+	<a href="teacher_classes_overview.jsp">&#60;&#60; Classes Overview</a>
 	<table style="margin: 30px; cell-padding: 10px;background-color:#F0F0F0;width:100%">
 		<tr>
 			<td style="padding-right: 50px">ID</td>
