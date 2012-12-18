@@ -44,7 +44,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 					}
 					for (MyClass iClass : classes) {
 					%>
-					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a> | <%= iConfig.namePrefix %>CLASS1GRADE</li>
+					<li><a href="teacher_class.jsp?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a> | <%= iConfig.namePrefix %>CLASS1GRADE</li>
 					<% } %>
 				</ul>
 				</div>

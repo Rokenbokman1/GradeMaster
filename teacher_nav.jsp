@@ -41,7 +41,7 @@ Config iConfig = Globals.getConfig();
 					}
 					for (MyClass iClass : classes) {
 					%>
-					<li><a href="teacher_class.do?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a></li>
+					<li><a href="teacher_class.jsp?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a></li>
 					<% } %>
 						</ul></li>
 				</ul>
