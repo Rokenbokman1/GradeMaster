@@ -11,7 +11,7 @@
 	MyClass iClass = new MyClass("Error","Error","Error","Error",null);
 	for (int i = 0; i < base.getObjects().size(); i++) {
 		MyClass c = (MyClass) base.getObject(i);
-		if (c.getCid().toString().equals(request.getParameter("id").toString())) {
+		if (c.getCid().toString().equals(request.getParameter("id").toString())&&c.getUid().toString().equals(user.getUid())) {
 			iClass=c;
 			break;
 		}

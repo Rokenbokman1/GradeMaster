@@ -27,7 +27,7 @@ Config iConfig = Globals.getConfig();
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Classes <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-                            <li><a href="classes_overview.do">Overview</a>
+                            <li><a href="teacher_classes_overview.jsp">Overview</a>
                             <li class="divider"></li>
                             <li class="nav-header">Classes</li>
                             <%
