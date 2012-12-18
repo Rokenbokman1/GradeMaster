@@ -10,14 +10,26 @@ import com.grademaster.Globals;
 
 public class RawLocalLoader implements IRawLoader {
 	
+	/**
+	 * The path the loader uses for IO
+	 * Must be local
+	 */
 	String path;
 	
+	/**
+	 * Contructs a new RawLocalLoader with a given path
+	 * @param path The Path for IO to take Must be local
+	 */
 	public RawLocalLoader(String path) {
 		Globals.getLogger().log("Created new Raw Local Loader.");
 		this.path=path;
 	}
 	
 	@Override
+	/**
+	 * Loads a string from the given local data path
+	 * @return String the String loaded from the data source
+	 */
 	public String loadString() throws IOException {
 		Globals.getLogger().log("Loading local data as string from " + getPath());
 		@SuppressWarnings("resource")
@@ -35,12 +47,19 @@ public class RawLocalLoader implements IRawLoader {
 	}
 
 	@Override
+	/**
+	 * @return String the path the loader is using for IO
+	 */
 	public String getPath() {
 		Globals.getLogger().log("Returning path...");
 		return path;
 	}
 
 	@Override
+	/**
+	 * Writes a string to the data source
+	 * @param String The data to be written
+	 */
 	public void writeString(String s) throws IOException {
 		Globals.getLogger().log("Writing data as string...");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path));

@@ -4,14 +4,32 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import com.grademaster.Globals;
-
+/**
+ * The hasher provides methods to hash strings using SHA-256 (E.g. a password)
+ * @author jake
+ *
+ */
 public class Hasher {
+	/**
+	 * The original string (E.g. a password)
+	 */
 	private String original;
+	/**
+	 * The cached version of the hashed String
+	 */
 	private String hashed;
+	/**
+	 * Constructs a hasher object with a given original string (E.g. a password)
+	 * @param str The original string of the Hasher object
+	 */
 	public Hasher(String str) {
 		this.original=str;
 	}
-	//Digests original bypassing cache
+	/**
+	 * Digests and returns original string bypassing all caching.  I honestly have no idea what most of this method does.
+	 * @return a String of the original given String hashed with SHA-256
+	 * @throws NoSuchAlgorithmException this should never be thrown because I use a static String, but I was too lazy to write a try/catch
+	 */
 	public String digest() throws NoSuchAlgorithmException {
 		//IDK what this does
         MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -34,7 +52,10 @@ public class Hasher {
     	}
 		return hexString.toString();
 	}
-	// Gets hashed version of original and digests if not cached
+	/**
+	 * Returns the hashed version of the original string.  This uses a cache and only digests the message once.
+	 * @return a SHA-256 hashed version of the original string
+	 */
 	public String getHashed() {
 		if (hashed==null) {
 			try {
