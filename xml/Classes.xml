@@ -23,4 +23,27 @@
 			</section>
 		</sections>
 	</class>
+	<class>
+		<cid>1</cid>
+		<uid>1</uid>
+		<name>Science</name>
+		<loc>Room 307</loc>
+		<desc>Another test class</desc>
+		<sections>
+			<section>
+				<sid>2</sid>
+				<cid>1</cid>
+				<name>Tests</name>
+				<value>80</value>
+				<desc>Another way to divide sections part 1</desc>
+			</section>
+			<section>
+				<sid>3</sid>
+				<cid>1</cid>
+				<name>Homework</name>
+				<value>20</value>
+				<desc>Another way to divide sections part 2</desc>
+			</section>
+		</sections>
+	</class>
 </classes>

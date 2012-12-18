@@ -44,7 +44,7 @@ public class Globals {
 	public static ClassDataBase getClasses() {
 		log.log("Getting classes...");
 		if (CLASSES == null) {
-			CLASSES = loadClasses();
+			updateClasses();
 		}
 		return CLASSES;
 	}
