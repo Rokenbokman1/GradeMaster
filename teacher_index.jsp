@@ -49,7 +49,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				</ul>
 				</div>
 				<p>
-					<a class="btn" href="#gradebook">Full Gradebook &raquo;</a>
+					<a class="btn" href="teacher_classes_overview.jsp">Classes overview &raquo;</a>
 				</p>
 			</div>
 			<div class="span4">

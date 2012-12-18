@@ -23,6 +23,7 @@
 	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
 	<h2>Classes Overview</h2>
+	<a href="index.do">&#60;&#60; Home</a>
 	<%
 	for (MyClass c : classes) {
 	%>
