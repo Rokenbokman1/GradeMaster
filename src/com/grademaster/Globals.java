@@ -4,8 +4,10 @@ import java.io.FileNotFoundException;
 
 import com.grademaster.data.RawLocalLoader;
 import com.grademaster.data.XMLInterface;
+import com.grademaster.data.objects.AssignmentDataBase;
 import com.grademaster.data.objects.ClassDataBase;
 import com.grademaster.data.objects.Config;
+import com.grademaster.data.xml.XMLAssignmentDataBaseAdapter;
 import com.grademaster.data.xml.XMLClassDataBaseAdapter;
 import com.grademaster.data.xml.XMLConfigAdapter;
 import com.grademaster.logging.ErrorLevel;
@@ -24,6 +26,48 @@ public class Globals {
 	private static String loggerPath = System.getProperty("user.dir")+"/GradeMaster.log";
 	private static XMLInterface CLASSINTERFACE;
 	private static String classURL = System.getProperty("user.dir")+"/xml/Classes.xml";
+	private static String assignmentURL = System.getProperty("user.dir")+"/xml/Assignments.xml";
+	private static XMLInterface ASSIGNMENTINTERFACE;
+	private static AssignmentDataBase ASSIGNMENTS;
+	
+	public static void setAssignmentURL(String a) {
+		Globals.assignmentURL=a;
+		ASSIGNMENTINTERFACE=null;
+		ASSIGNMENTS=null;
+	}
+	
+	public static String getAssignmentURL() {
+		return assignmentURL;
+	}
+	
+	// Forces a reload of the main user file
+	public static void updateAssignments() {
+		log.log("Updating Assignments...");
+		ASSIGNMENTS = loadAssignments();
+	}
+	//Loads config with cache
+	public static AssignmentDataBase getAssignments() {
+		log.log("Getting assignments...");
+		if (ASSIGNMENTS == null) {
+			updateAssignments();
+		}
+		return ASSIGNMENTS;
+	}
+
+	//Load users without cache
+	public static AssignmentDataBase loadAssignments() {
+		log.log("Loading assignments...", ErrorLevel.INFO);
+		if (ASSIGNMENTINTERFACE==null) {
+			ASSIGNMENTINTERFACE = new XMLInterface(new RawLocalLoader(assignmentURL), new XMLAssignmentDataBaseAdapter());
+		}
+		AssignmentDataBase assignments = null;
+		try {
+			assignments = (AssignmentDataBase) ASSIGNMENTINTERFACE.getData();
+		} catch (Exception e) {
+			log.log(e);
+		}
+		return assignments;
+	}
 	
 	public static void setClassURL(String classURL) {
 		Globals.classURL=classURL;
