@@ -52,61 +52,64 @@ public class XMLAssignmentDataBaseAdapter implements IXMLAdapter {
 	}
 
 	@Override
-	public String objectToData(Object o) throws ParserConfigurationException,
+	public String objectToData(Object obj) throws ParserConfigurationException,
 			Exception {
 		Globals.getLogger().log("XMLAssignmentDataBase to XML not complete yet!", ErrorLevel.WARNING);
-		return null;
-		/* -- might be used later
 		Globals.getLogger().log("Converting UserDataBase object to String (should be XML)...");
 		
 		//Cast object to config
-		UserDataBase users = (UserDataBase) o;
+		AssignmentDataBase os = (AssignmentDataBase) obj;
 		
 		//Initialize DOM
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		
 		Document doc = docBuilder.newDocument();
-		Element rootElement = doc.createElement("users");
+		Element rootElement = doc.createElement("assignments");
 		doc.appendChild(rootElement);
 		
 		//Create config element
 		Element xml = rootElement;
 		
-		for (Object user1 : users.getObjects()) {
-			User user = (User) user1;
+		for (Object o1 : os.getObjects()) {
+			Assignment o = (Assignment) o1;
 			
-			Element u = doc.createElement("user");
+			Element u = doc.createElement("assignment");
 			xml.appendChild(u);
 			
 			//Start creating data nodes
-			Element uname = doc.createElement("uname");
-			uname.appendChild(doc.createTextNode(user.getUsername()));
-			u.appendChild(uname);
+			Element p1 = doc.createElement("aid");
+			p1.appendChild(doc.createTextNode(o.getAid()));
+			u.appendChild(p1);
 			
-			Element pword = doc.createElement("pword");
-			pword.appendChild(doc.createTextNode(user.getPassword()));
-			u.appendChild(pword);
+			Element p2 = doc.createElement("sid");
+			p2.appendChild(doc.createTextNode(o.getSid()));
+			u.appendChild(p2);
+
+			Element p3 = doc.createElement("name");
+			p3.appendChild(doc.createTextNode(o.getName()));
+			u.appendChild(p3);
 			
-			Element fname = doc.createElement("fname");
-			fname.appendChild(doc.createTextNode(user.getFname()));
-			u.appendChild(fname);
+
+			Element p4 = doc.createElement("multi");
+			p4.appendChild(doc.createTextNode(o.getMulti()));
+			u.appendChild(p4);			
+
+			Element p5 = doc.createElement("pts");
+			p5.appendChild(doc.createTextNode(o.getPts()));
+			u.appendChild(p5);
+
+			Element p6 = doc.createElement("assigned");
+			p6.appendChild(doc.createTextNode(o.getAssigned()));
+			u.appendChild(p6);
+
+			Element p7 = doc.createElement("due");
+			p7.appendChild(doc.createTextNode(o.getDue()));
+			u.appendChild(p7);
 			
-			Element lname = doc.createElement("lname");
-			lname.appendChild(doc.createTextNode(user.getLname()));
-			u.appendChild(lname);
-			
-			Element type = doc.createElement("type");
-			type.appendChild(doc.createTextNode(user.getUserType()));
-			u.appendChild(type);
-			
-			Element uid = doc.createElement("uid");
-			uid.appendChild(doc.createTextNode(user.getUid()));
-			u.appendChild(uid);
-			
-			Element showWelcome = doc.createElement("showWelcome");
-			showWelcome.appendChild(doc.createTextNode(Boolean.toString(user.isShowWelcomeMessage())));
-			u.appendChild(showWelcome);
+			Element p8 = doc.createElement("desc");
+			p8.appendChild(doc.createTextNode(o.getDesc()));
+			u.appendChild(p8);
 		}
 		
 		TransformerFactory transFactory = TransformerFactory.newInstance();
@@ -117,7 +120,6 @@ public class XMLAssignmentDataBaseAdapter implements IXMLAdapter {
 		String str = buffer.toString().replace(">", ">\n").replace("</", "\n</");
 		
 		return str;
-		*/
 	}
 
 }
