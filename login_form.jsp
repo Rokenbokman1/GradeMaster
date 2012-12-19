@@ -36,6 +36,12 @@ xmlhttp.send();
 		<% if (request.getParameter("error")!=null && request.getParameter("error")!="") { %>
 		<p align="center">Error: <%= request.getParameter("error") %></p>
 		<% } %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<form align="center" action="login.do" method="post">
 			<fieldset>
 			<input type="text" name="username" placeholder="Username" id="unamebox" onkeyup="selectFunction()"><br>
