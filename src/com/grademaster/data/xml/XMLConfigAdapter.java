@@ -31,8 +31,9 @@ public class XMLConfigAdapter implements IXMLAdapter {
 		String version= doc.getElementsByTagName("version").item(0).getTextContent();
 		String logoPath= doc.getElementsByTagName("logo").item(0).getTextContent();
 		String namePrefix= doc.getElementsByTagName("namePrefix").item(0).getTextContent();
+		String favicon= doc.getElementsByTagName("favicon").item(0).getTextContent();
 		
-		Config con = new Config(name,author,date,version,logoPath,namePrefix);
+		Config con = new Config(name,author,date,version,logoPath,namePrefix,favicon);
 		
 		return con;
 	}

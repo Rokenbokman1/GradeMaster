@@ -16,9 +16,12 @@ Fri Dec 14 21:07:35 MST 2012
 
 </metadata>
 <logo>
-/img/logo.png
+img/main_logo.png
 </logo>
 <namePrefix>
 @
 </namePrefix>
+<favicon>
+img/favicon.ico
+</favicon>
 </config>
