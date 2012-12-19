@@ -4,7 +4,7 @@ import com.grademaster.data.IDataObject;
 import java.util.ArrayList;
 
 public abstract class DataBase implements IDataObject {
-	private ArrayList<Object> Objects;
+	protected ArrayList<Object> Objects;
 	public DataBase (ArrayList<Object> Objects) {
 		this.setObjects(Objects);
 	}

@@ -53,27 +53,31 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				</p>
 			</div>
 			<div class="span4">
-				<h2>Quik Assignment Creation</h2>
-				<form>
-					<select name="quikcreateclassselect">
-						<option selected>Select A Class</option>
-						<option value="quikcreateselectclass1"><%= iConfig.namePrefix %>CLASS1NAME</option>
-						<option value="quikcreateselectclass2"><%= iConfig.namePrefix %>CLASS2NAME</option>
-						<option value="quikcreateselectclass3"><%= iConfig.namePrefix %>CLASS3NAME</option>
-						<option value="quikcreateselectclass4"><%= iConfig.namePrefix %>CLASS4NAME</option>
-						<option value="quikcreateselectclass5"><%= iConfig.namePrefix %>CLASS5NAME</option>
-					</select> <input type="text" name="quikcreatename"
-						placeholder="Assignment Name"> <input type="date"
-						name="quikcreateduedate" placeholder="Assignment Due-Date">
-					<select name="quikcreatemultiplier">
-						<option value="quikcreatemultiplier1x">1x</option>
-						<option value="quikcreatemultiplier2x">2x</option>
-						<option value="quikcreatemultiplier3x">3x</option>
-						<option value="quikcreatemultiplier4x">4x</option>
-						<option value="quikcreatemultiplier5x">5x</option>
-					</select> <br>
-					<button type="submit" class="btn btn-primary">Submit
-						Assignment</button>
+				<h2>Create Assignment</h2>
+				<form action="quick_assignment_create.do" method="post">
+					<select name="sid">
+						<option selected>Select a Section</option>
+						<%
+						for (MyClass c : classes) {
+							for (ClassSection s : c.getSections()) {
+						%>
+							<option value="<%= s.getSid() %>"><%= iConfig.namePrefix %><%= s.getName() %></option>
+						<%
+							}
+						}
+						%>
+					</select>
+					<input type="text" name="name" placeholder="Assignment Name">
+					<input type="date" name="due" placeholder="Assignment Due-Date">
+					<input type="text" name="pts" placeholder="Points possible">
+					<select name="multi">
+						<% for (int i = 1; i<=5; i++) { %>
+						<option value="<%= i %>"><%= i %>x</option>
+						<% } %>
+					</select>
+					<input type="text" name="desc" placeholder="Description">
+					<br>
+					<input type="submit" class="btn btn-primary" value="Submit Assignment >>"/>
 				</form>
 				<p>
 					<a class="btn" href="#createassingment">Full Assignment

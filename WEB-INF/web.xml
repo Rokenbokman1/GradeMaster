@@ -69,6 +69,15 @@
 	<url-pattern>/user_type.do</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>quickAssignmentCreateServlet</servlet-name>
+	<servlet-class>com.grademaster.servlets.CreateAssignmentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>quickAssignmentCreateServlet</servlet-name>
+	<url-pattern>/quick_assignment_create.do</url-pattern>
+</servlet-mapping>
+
 <error-page>
 	<error-code>404</error-code>
 	<location>/err/err_404.jsp</location>

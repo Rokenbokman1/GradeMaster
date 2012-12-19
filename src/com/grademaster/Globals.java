@@ -30,6 +30,15 @@ public class Globals {
 	private static XMLInterface ASSIGNMENTINTERFACE;
 	private static AssignmentDataBase ASSIGNMENTS;
 	
+	public static void saveAssignments() {
+		log.log("Saving assignment data...", ErrorLevel.INFO);
+		try {
+			ASSIGNMENTINTERFACE.dumpData(ASSIGNMENTS);
+		} catch (Exception e) {
+			log.log(e);
+		}		
+	}
+	
 	public static void setAssignmentURL(String a) {
 		Globals.assignmentURL=a;
 		ASSIGNMENTINTERFACE=null;
