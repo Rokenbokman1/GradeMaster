@@ -43,6 +43,7 @@ public class XMLUserDataBaseAdapter implements IXMLAdapter {
 				map.put(n.getNodeName(), n.getTextContent());					
 			}
 			User user= User.getInstance(map.get("uname"), map.get("pword"), map.get("fname"), map.get("lname"), map.get("uid"), map.get("type"), Boolean.parseBoolean(map.get("showWelcome")));
+			Globals.getLogger().log("Loaded user: "+user.getUid()+": "+user.getUsername());
 			base.addObject(user);
 		}
 		
