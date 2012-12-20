@@ -36,6 +36,7 @@ public class XMLInterface extends DataInterface {
 		String raw = loader.loadString().replace("\n","").replace("	","");
 		Document d = loadXMLFromString(raw);
 		IDataObject o = adapter.dataToObject(d);
+		Globals.getLogger().log(o.toString());
 		return o;
 	}
 
