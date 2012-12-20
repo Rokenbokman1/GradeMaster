@@ -42,8 +42,8 @@ public class RawLocalLoader implements IRawLoader {
 	        stringBuilder.append( line );
 	        stringBuilder.append( ls );
 	    }
-	    // TODO Extra debug for Matt - Remove soon
-	    Globals.getLogger().log(stringBuilder.toString());
+	    //  Extra debug for Matt - Remove soon
+	    //Globals.getLogger().log(stringBuilder.toString());
 	    return stringBuilder.toString();
 	}
 
