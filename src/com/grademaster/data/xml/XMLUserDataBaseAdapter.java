@@ -40,7 +40,7 @@ public class XMLUserDataBaseAdapter implements IXMLAdapter {
 			for (int u=0;u<userNode.getChildNodes().getLength();u++) {
 				Node n = userNode.getChildNodes().item(u);
 				//Used for debugging - Globals.getLogger().log("Processing - " + n.getNodeName()+": " + n.getTextContent());
-				map.put(n.getNodeName(), n.getTextContent());					
+				map.put(n.getNodeName(), n.getTextContent().replace("\n", ""));					
 			}
 			User user= User.getInstance(map.get("uname"), map.get("pword"), map.get("fname"), map.get("lname"), map.get("uid"), map.get("type"), Boolean.parseBoolean(map.get("showWelcome")));
 			Globals.getLogger().log("Loaded user: "+user.getUid()+": "+user.getUsername());
