@@ -46,4 +46,50 @@
 			</section>
 		</sections>
 	</class>
+	<class>
+		<cid>2</cid>
+		<uid>2</uid>
+		<name>Test Class 1</name>
+		<loc>Test Room</loc>
+		<desc>A test class to demo</desc>
+		<sections>
+			<section>
+				<sid>4</sid>
+				<cid>2</cid>
+				<name>Test Section 1</name>
+				<value>50</value>
+				<desc>Test Section 1</desc>
+			</section>
+			<section>
+				<sid>5</sid>
+				<cid>2</cid>
+				<name>Test Section 2</name>
+				<value>50</value>
+				<desc>Test Section 2</desc>
+			</section>
+		</sections>
+	</class>
+	<class>
+		<cid>3</cid>
+		<uid>2</uid>
+		<name>Test Class 2</name>
+		<loc>Room 316</loc>
+		<desc>A test class to demo</desc>
+		<sections>
+			<section>
+				<sid>6</sid>
+				<cid>3</cid>
+				<name>Test Section 1</name>
+				<value>50</value>
+				<desc>Test Section 1</desc>
+			</section>
+			<section>
+				<sid>7</sid>
+				<cid>3</cid>
+				<name>Test Section 2</name>
+				<value>50</value>
+				<desc>Test Section 2</desc>
+			</section>
+		</sections>
+	</class>
 </classes>
