@@ -1,6 +1,6 @@
 GradeMaster
 ===========
 
-GradeMaster - The Private, Internal, Better UI for Infinite Campus.
+GradeMaster - A versatile alternative UI for Infinite Campus.
 
-Run the whole thing in a folder named "GradeMaster" within an Apache 7.0 server "webapps" folder for best results.
+Run the entire package in a folder named "GradeMaster" within an Apache Tomcat 7.0 server "webapps" folder for best results.
