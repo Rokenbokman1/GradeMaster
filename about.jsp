@@ -8,7 +8,11 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 	}%>
 <jsp:include page="header.jsp" />
 <body>
-	<jsp:include page="about_nav.jsp" />
+	<% if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn") == true && user.getUserType().equals("teacher")) { %>
+		<jsp:include page="teacher_nav.jsp" />
+	<% } else { %>
+		<jsp:include page="student_nav.jsp" />
+	<% } %>
 	<div class="container">
 		<div class="hero-unit">
 			<h1>About GradeMaster</h1>
@@ -20,4 +24,4 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				<p>GradeMaster is a versatile alternative UI for Infinite Campus. It was sparked as a 1 district Infinite Campus replacement. It became a alternitive UI when the creators realized, with the time they had, they could not reach the full capability as Infinite Campus. This system is currently used in CREATECONFIGVARIBLEHERE districts across the nation.</p>
 			</div>
 		</div>
-		<jsp:include page="footer.jsp" />
+<jsp:include page="footer.jsp" />

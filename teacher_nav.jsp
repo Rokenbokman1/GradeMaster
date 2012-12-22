@@ -20,6 +20,7 @@ Config iConfig = Globals.getConfig();
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="index.do">Home</a></li>
+                            <li><a href="about.jsp">About</a></li>
 					<li><a href="create_assignment.do">Create Assignment</a></li>
 					<li><a href="teacher_calendar.do">Calendar</a></li>
 					<li><a href="teacher_gradebook.do">Gradebook</a></li>
