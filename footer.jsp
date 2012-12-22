@@ -1,7 +1,6 @@
 <hr />
 <footer>
                 <p>&copy; GradeMaster 2012</p>
-                <a href="about.jsp">About GradeMaster</a>
             </footer>
 
         </div> <!-- /container -->

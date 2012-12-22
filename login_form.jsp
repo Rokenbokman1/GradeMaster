@@ -29,7 +29,7 @@ xmlhttp.send();
 }
 </script>
 
-	<jsp:include page="login_nav.jsp"></jsp:include>
+	<jsp:include page="student_nav.jsp"></jsp:include>
 	
 	<div class="container">
 		<h2 align="center">Please Login</h2>
