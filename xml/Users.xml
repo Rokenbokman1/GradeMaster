@@ -44,11 +44,10 @@ teacher
 1
 </uid>
 <showWelcome>
-true
+false
 </showWelcome>
 
 </user>
-
 <user>
 <uname>
 teacher
@@ -97,4 +96,5 @@ true
 </showWelcome>
 
 </user>
+
 </users>

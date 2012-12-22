@@ -78,6 +78,15 @@
 	<url-pattern>/quick_assignment_create.do</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>deleteCreateServlet</servlet-name>
+	<servlet-class>com.grademaster.servlets.DeleteAssignmentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>deleteCreateServlet</servlet-name>
+	<url-pattern>/delete_assignment.do</url-pattern>
+</servlet-mapping>
+
 <error-page>
 	<error-code>404</error-code>
 	<location>/err/err_404.jsp</location>

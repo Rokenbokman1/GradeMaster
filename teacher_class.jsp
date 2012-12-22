@@ -77,7 +77,7 @@
 				for (Assignment a : as) {
 			%>
 			<div style="margin-left: 60px">
-				<h6><%=iConfig.namePrefix%><%=a.getName()%><a>  </a><a href="gradebook.jsp" class="btn">Grade Assignment >></a><a>   </a><a href="DELETEASSIGNMENT" class="btn btn-primary">Delete Assignment >></a></h6>
+				<h6><%=iConfig.namePrefix%><%=a.getName()%><a href="gradebook.jsp" class="btn">Grade Assignment</a><a href="delete_assignment.do?aid=<%= a.getAid() %>&redirect=teacher_class.jsp?id=<%= s.getCid() %>" class="btn btn-primary">Delete Assignment >></a></h6>
 				<table
 					style="margin-left: 30px; cell-padding: 10px; background-color: #F0F0F0; width: 80%">
 					<tr>
