@@ -21,7 +21,7 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 		<div class="row">
 			<div class="span4">
 				<h2>GradeMaster</h2>
-				<p>GradeMaster is a versatile alternative UI for Infinite Campus. It was sparked as a 1 district Infinite Campus replacement. It became a alternitive UI when the creators realized, with the time they had, they could not reach the full capability as Infinite Campus. This system is currently used in CREATECONFIGVARIBLEHERE districts across the nation.</p>
+				<p>GradeMaster is a versatile alternative UI for Infinite Campus. It was sparked as a 1 district Infinite Campus replacement. It became a alternitive UI when the creators realized, with the time they had, they could not reach the full capability as Infinite Campus. Our goal is to add requested features to and address problems students, parents, and teachers have with the current IC User Interface.</p>
 			</div>
 		</div>
 <jsp:include page="footer.jsp" />
