@@ -1,9 +1,12 @@
 package com.grademaster.auth;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import com.grademaster.data.objects.User;
-import com.grademaster.data.objects.UserDataBase;
+import com.eakjb.EakjbData.DataStructureQuery;
+import com.eakjb.EakjbData.IDataObject;
+import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.IQuery;
 import com.grademaster.Globals;
 /**
  * Authenticator objects are used to compare passwords and lookup
@@ -15,19 +18,20 @@ public class Authenticator {
 	/**
 	 * The UserDataBase in which the Authenticator looks up user data
 	 */
-	private UserDataBase users;
+	private IDataStructure users;
 	/**
 	 * Constructs an Authenticator object with a given UserDataBase
 	 * @param users a UserDataBase object in which user data will be searched for
 	 */
-	public Authenticator(UserDataBase users) {
+	public Authenticator(IDataStructure users) {
 		this.users=users;
 	}
 	/**
 	 * Constructs an Authenticator object with a default UserDataBase taken from com.grademaster.globals.getUsers()
+	 * @throws Exception 
 	 */
-	public Authenticator() {
-		this(Globals.getUsers());
+	public Authenticator() throws Exception {
+		this(Globals.loadXMLFile(Globals.getUserURL()));
 	}
 	/**
 	 * Looks up a user object based on given data returns null if no user found
@@ -36,17 +40,25 @@ public class Authenticator {
 	 * @param type The type of account currently (as of 12-17-2012) "student" or "teacher"
 	 * @return either a User object with given properties or null if none was found
 	 */
-	public User authUser(String uname, String pword, String type) {
-		ArrayList<Object> aUsers = users.getObjects();
-		User user = null;
+	public IDataStructure authUser(String uname, String pword, String type) {
 		Hasher h = new Hasher(pword);
+		IDataStructure user = null;
 		String hpword=h.getHashed();
-		for (Object u1 : aUsers) {
-			User u = (User) u1;
-			if (u.getUsername().equals(uname) && u.getPassword().equals(hpword) && u.getUserType().equals(type)) {
+		
+		IQuery q = new DataStructureQuery(users,"user");
+		IDataStructure us=(IDataStructure) q.execute();
+		
+		Iterator<IDataObject> usi = us.iterator();
+		
+		while (usi.hasNext()) {
+			IDataStructure u = (IDataStructure) usi.next();
+			if (u.get("uname").getTextValue().equals(uname)&&u.get("pword").getTextValue().equals(hpword)&&u.get("type").getTextValue().equals(type)) {
 				user=u;
+				break;
 			}
 		}
+		
+		
 		return user;
 	}
 	/**
@@ -55,11 +67,15 @@ public class Authenticator {
 	 * @return the user type of the user with a given username (as of 12-17-2012 "student or "teacher") or null if no user was found
 	 */
 	public String typeUser(String uname) {
-		ArrayList<Object> aUsers = Globals.getUsers().getObjects();
-		for (Object u1 : aUsers) {
-			User u = (User) u1;
-			if (u.getUsername().equals(uname)) {
-				return u.getUserType();
+		IQuery q = new DataStructureQuery(users,"user");
+		IDataStructure us=(IDataStructure) q.execute();
+		
+		Iterator<IDataObject> usi = us.iterator();
+		
+		while (usi.hasNext()) {
+			IDataStructure u = (IDataStructure) usi.next();
+			if (u.get("uname").getTextValue().equals(uname)) {
+				return u.get("type").getTextValue();
 			}
 		}
 		return null;

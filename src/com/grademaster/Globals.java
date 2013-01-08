@@ -2,6 +2,10 @@ package com.grademaster;
 
 import java.io.FileNotFoundException;
 
+import com.eakjb.EakjbData.DataInterface;
+import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.RawLocalLoader;
+import com.eakjb.EakjbData.DataAdapters.XMLAdapter;
 import com.eakjb.EakjbData.Logging.*;
 
 public class Globals {
@@ -14,8 +18,10 @@ public class Globals {
 	
 	private static String loggerPath = System.getProperty("user.dir")+"/GradeMaster.log";
 	
-	
-	
+	public static IDataStructure loadXMLFile(String path) throws Exception {
+		DataInterface i = new DataInterface(new RawLocalLoader(path, log), new XMLAdapter(log));
+		return (IDataStructure) i.getData();
+	}
 	
 	public static void setAssignmentURL(String a) {
 		Globals.assignmentURL=a;
