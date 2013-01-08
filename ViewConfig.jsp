@@ -1,31 +1,33 @@
 <jsp:include page="header.jsp" />
-<%@ page import="com.grademaster.data.objects.*" %>
+<%@ page import="com.eakjb.EakjbData.IDataStructure" %>
 <% 
 if (request.getAttribute("config")==null) {
 	response.sendRedirect("/GradeMaster/ViewConfig.do");
 } else {
-Config con = (Config) request.getAttribute("config"); %>
+IDataStructure con = (IDataStructure) request.getAttribute("config");
+IDataStructure metadata = (IDataStructure) con.get("metadata");
+%>
 <h2>Configuration Settings</h2>
 <table>
 	<tr>
 		<td>Name: </td>
-		<td><%= con.name %></td>
+		<td><%= con.get("name") %></td>
 	</tr>
 	<tr>
 		<td>Author: </td>
-		<td><%= con.metadata.author %></td>
+		<td><%= metadata.get("author") %></td>
 	</tr>
 	<tr>
 		<td>Date: </td>
-		<td><%= con.metadata.date %></td>
+		<td><%= metadata.get("date") %></td>
 	</tr>
 	<tr>
 		<td>Version: </td>
-		<td><%= con.metadata.version %></td>
+		<td><%= metadata.get("version") %></td>
 	</tr>
 	<tr>
 		<td>logoPath: </td>
-		<td><%= con.logoPath %></td>
+		<td><%= con.get("logoPath") %></td>
 	</tr>
 </table>
 <% } %>

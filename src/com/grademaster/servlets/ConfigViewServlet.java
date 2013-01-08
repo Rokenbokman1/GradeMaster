@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
-import com.grademaster.data.objects.Config;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
+import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.Logging.*;
 
 public class ConfigViewServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
@@ -21,8 +20,12 @@ public class ConfigViewServlet extends HttpServlet {
 		
 	    log.log("Config View Servlet Started.",ErrorLevel.INFO);
 	    
-		Globals.updateConfig();
-	    Config config = Globals.getConfig();
+		IDataStructure config=null;
+		try {
+			config = Globals.loadXMLFile(Globals.getConfigURL());
+		} catch (Exception e) {
+			log.log(e);
+		}
 	    
 	    req.setAttribute("config", config);
 	    
