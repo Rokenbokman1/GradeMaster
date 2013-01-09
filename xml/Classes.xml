@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<classes>
+<Classes>
 	<class>
 		<cid>0</cid>
 		<uid>1</uid>
@@ -46,4 +46,4 @@
 			</section>
 		</sections>
 	</class>
-</classes>
+</Classes>

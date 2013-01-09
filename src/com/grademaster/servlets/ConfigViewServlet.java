@@ -30,7 +30,7 @@ public class ConfigViewServlet extends HttpServlet {
 				log.log(key+": "+p.get(key));
 			}
 			IDataInterface i = (IDataInterface) p.get("Config.interface");
-			config = (IDataStructure) ((IDataStructure) i.getData()).get("config");
+			config = (IDataStructure) ((IDataStructure) i.getData()).get("Config");
 		} catch (Exception e) {
 			log.log(e);
 		}

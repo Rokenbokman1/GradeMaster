@@ -1,4 +1,8 @@
-<%@ page import="com.grademaster.*" %>
+<%@ page import="com.grademaster.Globals" %>
+<%@ page import="com.eakjb.EakjbData.IDataStructure" %>
+<%
+IDataStructure con = Globals.getStructure("Config");
+%>
 <!DOCTYPE html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -15,7 +19,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title><%= Globals.getConfig().name %></title>
+<title><%= con.get("name") %></title>
 
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
@@ -31,7 +35,7 @@ body {
 
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 <link rel="stylesheet" href="css/main.css">
-<link rel="shortcut icon" type="image/x-icon" href="<%= Globals.getConfig().favicon %>"/>
+<link rel="shortcut icon" type="image/x-icon" href="<%= con.get("favicon") %>"/>
 
 
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
