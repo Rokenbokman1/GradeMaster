@@ -5,6 +5,7 @@ import java.util.Iterator;
 import com.eakjb.EakjbData.DataStructureQuery;
 import com.eakjb.EakjbData.IDataObject;
 import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.IDataInterface;
 import com.eakjb.EakjbData.IQuery;
 import com.grademaster.Globals;
 /**
@@ -30,7 +31,7 @@ public class Authenticator {
 	 * @throws Exception 
 	 */
 	public Authenticator() throws Exception {
-		this(Globals.loadXMLFile(Globals.getUserURL()));
+		this((IDataStructure) ((IDataInterface) Globals.getProps().get("Users.interface")).getData());
 	}
 	/**
 	 * Looks up a user object based on given data returns null if no user found

@@ -1,4 +1,3 @@
-<jsp:include page="header.jsp" />
 <%@ page import="com.eakjb.EakjbData.IDataStructure" %>
 <% 
 if (request.getAttribute("config")==null) {

@@ -1,76 +1,58 @@
 package com.grademaster;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.eakjb.EakjbData.DataInterface;
-import com.eakjb.EakjbData.IDataStructure;
 import com.eakjb.EakjbData.RawLocalLoader;
 import com.eakjb.EakjbData.DataAdapters.XMLAdapter;
 import com.eakjb.EakjbData.Logging.*;
 
 public class Globals {
-	private static Logger log;
+	private static HashMap<String,Object> props = genDefaults();
 	
-	private static String configURL = System.getProperty("user.dir")+"/xml/Config.xml";
-	private static String userURL = System.getProperty("user.dir")+"/xml/Users.xml";
-	private static String classURL = System.getProperty("user.dir")+"/xml/Classes.xml";
-	private static String assignmentURL = System.getProperty("user.dir")+"/xml/Assignments.xml";
-	
-	private static String loggerPath = System.getProperty("user.dir")+"/GradeMaster.log";
-	
-	public static IDataStructure loadXMLFile(String path) throws Exception {
-		DataInterface i = new DataInterface(new RawLocalLoader(path, log), new XMLAdapter(log));
-		return (IDataStructure) i.getData();
+	private static HashMap<String,Object> genDefaults() {
+		HashMap<String,Object> p = new HashMap<String,Object>();
+		
+		try {
+			p.put("logger", new Logger(System.getProperties().get("user.dir")+"/Grademaster.log"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		ArrayList<String> paths = new ArrayList<String>();
+		
+		paths.add("Config");
+		paths.add("Users");
+		paths.add("Classes");
+		paths.add("Assignments");
+		
+		p.put("interfaces", paths);
+		
+		for (String path : paths) {
+			setInterface(path,System.getProperties().get("user.dir")+"/xml/"+path+".xml",p);
+		}
+           
+		return p;
 	}
-	
-	public static void setAssignmentURL(String a) {
-		Globals.assignmentURL=a;
+	public static HashMap<String,Object> setInterface(String i, String path, HashMap<String,Object> p) {
+		p.put(path+".path", path);
+		p.put(path+".interface", new DataInterface(new RawLocalLoader((String) p.get(path+".path"), (Logger) p.get("logger")), new XMLAdapter((Logger) p.get("logger")), true, (Logger) p.get("logger")));
+		return p;
 	}
-	
-	public static String getAssignmentURL() {
-		return assignmentURL;
+	public static void setInterface(String i, String path) {
+		props=setInterface(i,path,props);
 	}
-	public static void setClassURL(String classURL) {
-		Globals.classURL=classURL;
+	public static HashMap<String,Object> getProps() {
+		return props;
 	}
-	
-	public static String getClassURL() {
-		return classURL;
+	public static void setProps(HashMap<String,Object> props) {
+		Globals.props = props;
 	}
-
-	public static String getConfigURL() {
-		return configURL;
-	}
-
-	public static void setConfigURL(String u) {
-		if (u==configURL) {
-			return;
-		} else {
-			configURL = u;
-		}		
-	}
-	public static void setUserURL(String path) {
-		userURL=path;
-	}
-	public static String getUserURL() {
-		return userURL;
-	}
-
-	public static String getLoggerPath() {
-		return loggerPath;
-	}
-
-	public static void setLoggerPath(String loggerPath) throws FileNotFoundException {
-		Globals.loggerPath = loggerPath;
-		Globals.setLogger(new Logger(loggerPath));
-	}
-
 	public static Logger getLogger() {
-		return log;
-	}
-
-	public static void setLogger(Logger log) {
-		Globals.log = log;
-		Globals.loggerPath=log.path;
+		return (Logger) props.get("logger");
 	}
 }
+
+

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
 import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.IDataInterface;
 import com.eakjb.EakjbData.Logging.*;
 
 public class ConfigViewServlet extends HttpServlet {
@@ -22,7 +23,7 @@ public class ConfigViewServlet extends HttpServlet {
 	    
 		IDataStructure config=null;
 		try {
-			config = Globals.loadXMLFile(Globals.getConfigURL());
+			config = (IDataStructure) ((IDataInterface) Globals.getProps().get("Config.interface")).getData();
 		} catch (Exception e) {
 			log.log(e);
 		}

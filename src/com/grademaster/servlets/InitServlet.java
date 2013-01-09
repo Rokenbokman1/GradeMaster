@@ -1,23 +1,27 @@
 package com.grademaster.servlets;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServlet;
 
 import com.grademaster.*;
-import com.grademaster.logging.*;
+import com.eakjb.EakjbData.Logging.*;
 
 public class InitServlet extends HttpServlet {
 	private static final long serialVersionUID = 5420347520988085861L;
 	public void init() {
-		Globals.setLoggerPath(getServletContext().getRealPath("GradeMaster.log"));
+		try {
+			Globals.getProps().put("logger", new Logger(getServletContext().getRealPath("GradeMaster.log")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		Logger log = Globals.getLogger();
-	    log.log("Initializing...",ErrorLevel.INFO);
-		log.log("Configuring configuration path...",ErrorLevel.INFO);
-		Globals.setConfigURL(getServletContext().getRealPath("/xml/Config.xml"));
-		log.log("Configuring user path...",ErrorLevel.INFO);
-		Globals.setUserURL(getServletContext().getRealPath("/xml/Users.xml"));
-		log.log("Configuring classes path...",ErrorLevel.INFO);
-		Globals.setClassURL(getServletContext().getRealPath("/xml/Classes.xml"));
-		log.log("Configuring assignments path...",ErrorLevel.INFO);
-		Globals.setAssignmentURL(getServletContext().getRealPath("/xml/Assignments.xml"));
+		log.log("Initializing...",ErrorLevel.INFO);
+		ArrayList<String> a = (ArrayList<String>) Globals.getProps().get("interfaces");
+		for (String s : a) {
+			log.log("Configuring '"+s+"' path to: " + getServletContext().getRealPath("/xml/"+s+".xml"),ErrorLevel.INFO);
+			Globals.setInterface(s, getServletContext().getRealPath("/xml/"+s+".xml"));
+		}
 	}
 }
