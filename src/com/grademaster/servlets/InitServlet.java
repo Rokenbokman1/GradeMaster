@@ -17,7 +17,10 @@ public class InitServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		Logger log = Globals.getLogger();
-		log.log("Initializing...",ErrorLevel.INFO);
+		
+		log.log("Initializing Application...",ErrorLevel.INFO);
+		log.log("Initializing Data paths...",ErrorLevel.INFO);
+		
 		ArrayList<String> a = (ArrayList<String>) Globals.getProps().get("interfaces");
 		for (String s : a) {
 			log.log("Configuring '"+s+"' path to: " + getServletContext().getRealPath("/xml/"+s+".xml"),ErrorLevel.INFO);

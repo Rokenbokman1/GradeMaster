@@ -1,2 +1,55 @@
-[Mon Jan 07 19:17:08 MST 2013] [DEBUG] New logger initialized.
-[Mon Jan 07 19:17:08 MST 2013] [DEBUG] 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Initializing Application...
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Initializing Data paths...
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Configuring 'Config' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Configuring 'Users' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Configuring 'Classes' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 09 09:30:40 MST 2013] [INFO] Configuring 'Assignments' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 09 09:30:40 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 09 09:30:43 MST 2013] [INFO] Config View Servlet Started.
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Users.interface: com.eakjb.EakjbData.DataInterface@324e68fb
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Assignments.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] interfaces: [Config, Users, Classes, Assignments]
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] logger: com.eakjb.EakjbData.Logging.Logger@39ce508a
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Assignments.interface: com.eakjb.EakjbData.DataInterface@1809b1ac
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Config.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Users.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Config.interface: com.eakjb.EakjbData.DataInterface@246f9f88
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Classes.interface: com.eakjb.EakjbData.DataInterface@1c52ac68
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Classes.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Loaded new data.
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Loadind data...
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Returning path...
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Loading local data as string from /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Converting xml to object...
+[Wed Jan 09 09:30:43 MST 2013] [DEBUG] Converting String to XML...
+[Wed Jan 09 09:30:46 MST 2013] [INFO] Config View Servlet Started.
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Users.interface: com.eakjb.EakjbData.DataInterface@324e68fb
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Assignments.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] interfaces: [Config, Users, Classes, Assignments]
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] logger: com.eakjb.EakjbData.Logging.Logger@39ce508a
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Assignments.interface: com.eakjb.EakjbData.DataInterface@1809b1ac
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Config.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Users.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Config.interface: com.eakjb.EakjbData.DataInterface@246f9f88
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Classes.interface: com.eakjb.EakjbData.DataInterface@1c52ac68
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Classes.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 09 09:30:46 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 09 09:30:48 MST 2013] [INFO] Config View Servlet Started.
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Users.interface: com.eakjb.EakjbData.DataInterface@324e68fb
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Assignments.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] interfaces: [Config, Users, Classes, Assignments]
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] logger: com.eakjb.EakjbData.Logging.Logger@39ce508a
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Assignments.interface: com.eakjb.EakjbData.DataInterface@1809b1ac
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Config.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Users.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Config.interface: com.eakjb.EakjbData.DataInterface@246f9f88
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Classes.interface: com.eakjb.EakjbData.DataInterface@1c52ac68
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Classes.path: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 09 09:30:48 MST 2013] [DEBUG] Returned cached data.

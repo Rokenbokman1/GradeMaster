@@ -37,8 +37,8 @@ public class Globals {
 		return p;
 	}
 	public static HashMap<String,Object> setInterface(String i, String path, HashMap<String,Object> p) {
-		p.put(path+".path", path);
-		p.put(path+".interface", new DataInterface(new RawLocalLoader((String) p.get(path+".path"), (Logger) p.get("logger")), new XMLAdapter((Logger) p.get("logger")), true, (Logger) p.get("logger")));
+		p.put(i+".path", path);
+		p.put(i+".interface", new DataInterface(new RawLocalLoader((String) p.get(i+".path"), (Logger) p.get("logger")), new XMLAdapter((Logger) p.get("logger")), true, (Logger) p.get("logger")));
 		return p;
 	}
 	public static void setInterface(String i, String path) {

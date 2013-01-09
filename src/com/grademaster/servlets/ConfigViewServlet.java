@@ -1,6 +1,7 @@
 package com.grademaster.servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,8 +23,14 @@ public class ConfigViewServlet extends HttpServlet {
 	    log.log("Config View Servlet Started.",ErrorLevel.INFO);
 	    
 		IDataStructure config=null;
+		
 		try {
-			config = (IDataStructure) ((IDataInterface) Globals.getProps().get("Config.interface")).getData();
+			HashMap<String,Object> p = Globals.getProps();
+			for (String key : p.keySet()) {
+				log.log(key+": "+p.get(key));
+			}
+			IDataInterface i = (IDataInterface) p.get("Config.interface");
+			config = (IDataStructure) ((IDataStructure) i.getData()).get("config");
 		} catch (Exception e) {
 			log.log(e);
 		}

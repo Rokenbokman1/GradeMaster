@@ -26,7 +26,7 @@ IDataStructure metadata = (IDataStructure) con.get("metadata");
 	</tr>
 	<tr>
 		<td>logoPath: </td>
-		<td><%= con.get("logoPath") %></td>
+		<td><%= con.get("logo") %></td>
 	</tr>
 </table>
 <% } %>
