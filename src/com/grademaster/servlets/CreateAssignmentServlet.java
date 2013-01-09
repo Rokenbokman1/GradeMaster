@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
-
-import com.grademaster.data.objects.Assignment;
+import com.eakjb.EakjbData.Logging.*;
 
 public class CreateAssignmentServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;

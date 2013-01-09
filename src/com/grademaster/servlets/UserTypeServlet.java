@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
 import com.grademaster.auth.Authenticator;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
+import com.eakjb.EakjbData.Logging.*;
 
 public class UserTypeServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
@@ -20,7 +19,12 @@ public class UserTypeServlet extends HttpServlet {
 		
 	    log.log("User type lookup Servlet Started.",ErrorLevel.INFO);
 		
-	    Authenticator auth = new Authenticator();
+	    Authenticator auth=null;
+		try {
+			auth = new Authenticator();
+		} catch (Exception e) {
+			log.log(e);
+		}
 	    res.getWriter().print(auth.typeUser(req.getParameter("uname")));
 	}
 }
