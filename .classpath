@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="servlet-api.jar"/>
-	<classpathentry kind="lib" path="EakjbData-Alpha_1.0.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/WEB-INF/lib/EakjbData-Alpha_1.0.0.0.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
