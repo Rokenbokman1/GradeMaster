@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
-import com.grademaster.data.objects.User;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
+import com.eakjb.EakjbData.Logging.*;
+import com.eakjb.EakjbData.IDataStructure;
 
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
@@ -30,10 +29,10 @@ public class IndexServlet extends HttpServlet {
 	    if (loggedIn==true) {
 	    	log.log("User is logged in.");
 	    	String redirect="index_misc.jsp";
-	    	String accountType = ((User) req.getSession(true).getAttribute("user")).getUserType();
-	    	if (accountType!=null && accountType=="teacher") {
+	    	String accountType = ((IDataStructure) req.getSession(true).getAttribute("user")).get("type").getTextValue();
+	    	if (accountType!=null && accountType.equals("teacher")) {
 	    		redirect = "teacher_index.jsp";
-	    	} else if (accountType!=null && accountType=="student") {
+	    	} else if (accountType!=null && accountType.equals("student")) {
 	    		redirect = "student_index.jsp";
 	    	}
 		    log.log("Index dispatched to: " + redirect);
