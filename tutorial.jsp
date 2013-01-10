@@ -1,10 +1,10 @@
-<%@ page import="com.grademaster.data.objects.*" %>
-<%@ page import="com.grademaster.*" %>
+<%@ page import="com.eakjb.EakjbData.IDataStructure" %>
+<%@ page import="com.grademaster.Globals" %>
 <% 
-Config iConfig = Globals.getConfig();
-User user=null;
+IDataStructure iConfig = Globals.getStructure("Config");
+IDataStructure user=null;
 if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn")) {
-	user = (User) session.getAttribute("user");
+	user = (IDataStructure) session.getAttribute("user");
 	}
 String tutorial = "both";
 if (!(request.getParameter("t")==null || request.getParameter("t") =="")) {
@@ -18,7 +18,7 @@ if (!(request.getParameter("t")==null || request.getParameter("t") =="")) {
 	
 <jsp:include page="header.jsp" />
 <body>
-	<% if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn") == true && user.getUserType().equals("teacher")) { %>
+	<% if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn") == true && user.get("type").getTextValue().equals("teacher")) { %>
 		<jsp:include page="teacher_nav.jsp" />
 	<% } else { %>
 		<jsp:include page="student_nav.jsp" />

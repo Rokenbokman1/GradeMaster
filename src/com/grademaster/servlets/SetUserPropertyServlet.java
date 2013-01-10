@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
-import com.grademaster.data.objects.User;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
+import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.DataObjects.TextDataObject;
+import com.eakjb.EakjbData.Logging.*;
 
 public class SetUserPropertyServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
@@ -23,9 +23,14 @@ public class SetUserPropertyServlet extends HttpServlet {
 		
 	    boolean loggedIn = (Boolean) req.getSession().getAttribute("loggedIn");
 	    if (loggedIn) {
-	    	User user = (User) req.getSession().getAttribute("user");
-	    	user.setShowWelcomeMessage(Boolean.parseBoolean(req.getParameter("value")));
-	    	Globals.saveUsers();
+	    	IDataStructure user = (IDataStructure) req.getSession().getAttribute("user");
+	    	user.set("showWelcome", new TextDataObject("showWelcome",String.valueOf(Boolean.parseBoolean(req.getParameter("value")))));
+	    	try {
+				Globals.getInterface("Users").dumpData();
+			} catch (Exception e) {
+				log.log("Problem saving users:",ErrorLevel.ERROR);
+				log.log(e);
+			}
 	    }
 	    if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {
 	    	res.sendRedirect("index.do");

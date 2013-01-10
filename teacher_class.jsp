@@ -1,10 +1,10 @@
-<%@ page import="com.grademaster.data.objects.*"%>
-<%@ page import="com.grademaster.*"%>
+<%@ page import="com.eakjb.EakjbData.*"%>
+<%@ page import="com.grademaster.Globals"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	User user = null;
+	IDataStructure IDataStructure = null;
 	if ((Boolean) session.getAttribute("loggedIn")) {
-		user = (User) session.getAttribute("user");
+		IDataStructure = (IDataStructure) session.getAttribute("IDataStructure");
 	}
 	Config iConfig = Globals.getConfig();
 
@@ -15,7 +15,7 @@
 		MyClass c = (MyClass) base.getObject(i);
 		if (c.getCid().toString()
 				.equals(request.getParameter("id").toString())
-				&& c.getUid().toString().equals(user.getUid())) {
+				&& c.getUid().toString().equals(IDataStructure.getUid())) {
 			iClass = c;
 			break;
 		}
