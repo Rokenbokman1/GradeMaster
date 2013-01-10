@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.grademaster.Globals;
 import com.grademaster.auth.Authenticator;
-import com.grademaster.data.objects.User;
-import com.grademaster.logging.ErrorLevel;
-import com.grademaster.logging.Logger;
+import com.eakjb.EakjbData.IDataStructure;
+import com.eakjb.EakjbData.Logging.*;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
@@ -29,8 +28,13 @@ public class LoginServlet extends HttpServlet {
 	    if (req.getParameter("username")==null || req.getParameter("username")=="" || req.getParameter("password")==null || req.getParameter("password")=="") {
 	    	res.sendRedirect("login_form.jsp?error=Empty username or password");
 	    } else {
-	    	Authenticator auth = new Authenticator();
-	    	User user=auth.authUser(req.getParameter("username"), req.getParameter("password"), req.getParameter("type"));
+	    	Authenticator auth=null;
+			try {
+				auth = new Authenticator();
+			} catch (Exception e) {
+				log.log(e);
+			}
+	    	IDataStructure user=auth.authUser(req.getParameter("username"), req.getParameter("password"), req.getParameter("type"));
 	    	if (user==null) {
 	    		res.sendRedirect("login_form.jsp?error=Incorrect username or password");
 	    	} else {
