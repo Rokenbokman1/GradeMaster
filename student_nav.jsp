@@ -16,7 +16,7 @@ IDataStructure iConfig = Globals.getStructure("Config");
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="index.do"><% if (session.getAttribute("loggedIn")!=null&&(Boolean)session.getAttribute("loggedIn")==true) { %>
-                    <%= iConfig.get("namePrefix") %><%= user.get("name") %>
+                    <%= iConfig.get("namePrefix") %><%= user.get("fname").getTextValue()+" "+user.get("lname").getTextValue() %>
                     <% } else { %>
                     <%= iConfig.get("namePrefix") %><%= iConfig.get("name") %>
                     <% } %></a>
