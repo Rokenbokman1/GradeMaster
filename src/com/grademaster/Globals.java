@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.eakjb.EakjbData.AttributeQuery;
 import com.eakjb.EakjbData.DataInterface;
+import com.eakjb.EakjbData.DataStructureQuery;
 import com.eakjb.EakjbData.IDataInterface;
 import com.eakjb.EakjbData.IDataStructure;
 import com.eakjb.EakjbData.RawLocalLoader;
@@ -56,6 +58,16 @@ public class Globals {
 	}
 	public static void setInterface(String i, String path) {
 		props=setInterface(i,path,props);
+	}
+	public static IDataStructure runAttrQuery(String i, String type, String attr, String value) {
+		IDataStructure s = getStructure(i);
+		AttributeQuery q = new AttributeQuery(s,type,attr,value);
+		return (IDataStructure) q.execute();
+	}
+	public static IDataStructure runStructQuery(String i, String type) {
+		IDataStructure s = getStructure(i);
+		DataStructureQuery q = new DataStructureQuery(s,type);
+		return (IDataStructure) q.execute();
 	}
 	public static HashMap<String,Object> getProps() {
 		return props;

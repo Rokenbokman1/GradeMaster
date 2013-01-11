@@ -1,12 +1,14 @@
-<%@ page import="com.grademaster.data.objects.*" %>
-<%@ page import="com.grademaster.*" %>
-<%@ page import="java.util.ArrayList" %>
-<% User user=null;
-if ((Boolean) session.getAttribute("loggedIn")) {
-	user = (User) session.getAttribute("user");
+<%@ page import="com.eakjb.EakjbData.IDataStructure"%>
+<%@ page import="com.eakjb.EakjbData.IDataObject"%>
+<%@ page import="com.grademaster.Globals"%>
+<%@ page import="java.util.ArrayList"%>
+<%
+	IDataStructure user = null;
+	if ((Boolean) session.getAttribute("loggedIn")) {
+		user = (IDataStructure) session.getAttribute("user");
 	}
-Config iConfig = Globals.getConfig();
-	%>
+	IDataStructure iConfig = Globals.getStructure("Config");
+%>
 <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -16,11 +18,11 @@ Config iConfig = Globals.getConfig();
 			<a class="btn btn-navbar" data-toggle="collapse"
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
-			</a> <a class="brand" href="index.do"><%= iConfig.namePrefix %><%= user.getName() %></a>
+			</a> <a class="brand" href="index.do"><%=iConfig.get("namePrefix")%><%=user.get("fname") + " " + user.get("lname")%></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="index.do">Home</a></li>
-                            <li><a href="about.jsp">About</a></li>
+					<li><a href="about.jsp">About</a></li>
 					<li><a href="create_assignment.do">Create Assignment</a></li>
 					<li><a href="teacher_calendar.do">Calendar</a></li>
 					<li><a href="teacher_gradebook.do">Gradebook</a></li>
@@ -28,33 +30,36 @@ Config iConfig = Globals.getConfig();
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Classes <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-                            <li><a href="teacher_classes_overview.jsp">Overview</a>
-                            <li class="divider"></li>
-                            <li class="nav-header">Classes</li>
-                            <%
-					ClassDataBase base = Globals.getClasses();
-					ArrayList<MyClass> classes	= new ArrayList<MyClass>();
-					for (int i=0;i<base.getObjects().size();i++) {
-						MyClass iClass = (MyClass) base.getObject(i);
-						if (iClass.getUid().equals(user.getUid())) {
-							classes.add(iClass);
-						}
-					}
-					for (MyClass iClass : classes) {
-					%>
-					<li><a href="teacher_class.jsp?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a></li>
-					<% } %>
+							<li><a href="teacher_classes_overview.jsp">Overview</a>
+							<li class="divider"></li>
+							<li class="nav-header">Classes</li>
+							<%
+								IDataStructure classes = Globals.runAttrQuery("Classes", "class",
+										"uid", user.get("uid").getTextValue());
+								for (IDataObject iClass1 : classes.getObjects()) {
+									IDataStructure iClass = (IDataStructure) iClass1;
+							%>
+							<li><a href="teacher_class.jsp?id=<%=iClass.get("cid")%>"><%=iConfig.get("namePrefix")%><%=iClass.get("name")%></a></li>
+							<%
+								}
+							%>
 						</ul></li>
 				</ul>
-				<% if ((Boolean) session.getAttribute("loggedIn")==true) {%>
-                        <form class="navbar-form pull-right" action="logout.do" method="get">
-                        	<input type="submit" value="Log out" class="btn"/>
-                        </form>
-                        <% } else { %>
-                        <form class="navbar-form pull-right" action="login.do" method="get">
-                        	<input type="submit" value="Log in" class="btn"/>
-                        </form>
-                       <% } %>
+				<%
+					if ((Boolean) session.getAttribute("loggedIn") == true) {
+				%>
+				<form class="navbar-form pull-right" action="logout.do" method="get">
+					<input type="submit" value="Log out" class="btn" />
+				</form>
+				<%
+					} else {
+				%>
+				<form class="navbar-form pull-right" action="login.do" method="get">
+					<input type="submit" value="Log in" class="btn" />
+				</form>
+				<%
+					}
+				%>
 			</div>
 			<!--/.nav-collapse -->
 		</div>

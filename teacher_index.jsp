@@ -1,11 +1,12 @@
-<%@ page import="com.grademaster.data.objects.*" %>
+<%@ page import="com.eakjb.EakjbData.IDataStructure" %>
+<%@ page import="com.eakjb.EakjbData.IDataObject" %>
 <%@ page import="com.grademaster.*" %>
 <%@ page import="java.util.ArrayList" %>
 <% 
-Config iConfig = Globals.getConfig();
-User user=null;
+IDataStructure iConfig = Globals.getStructure("Config");
+IDataStructure user=null;
 if ((Boolean) session.getAttribute("loggedIn")) {
-	user = (User) session.getAttribute("user");
+	user = (IDataStructure) session.getAttribute("user");
 	}%>
 <jsp:include page="header.jsp" />
 <body>
@@ -13,15 +14,15 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 
 
 	<div class="container">
-		<% if (user.isShowWelcomeMessage()) { %>
+		<% if ((Boolean.parseBoolean(user.get("showWelcome").getTextValue()))) { %>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Welcome, <%= iConfig.namePrefix %><%= user.getName() %>!</h1>
-			<p>Welcome to <%= iConfig.name %>! This is the place for you to
+			<h1>Welcome, <%= iConfig.get("namePrefix") %><%= user.get("fname")+" "+user.get("lname") %>!</h1>
+			<p>Welcome to <%= iConfig.get("name") %>! This is the place for you to
 				submit your student's grades into the gradebook, manage calendars, and take attendance.  You may watch a tutorial to get started or close this message.</p>
 			<p>
 			<a href="edit_user.do?value=false" class="btn btn-primary btn-large">Close</a>
-				<a href="tutorial.jsp?t=teacher" class="btn btn-primary btn-large">Watch a quick start tutorial on how to use <%= iConfig.name %>.
+				<a href="tutorial.jsp?t=teacher" class="btn btn-primary btn-large">Watch a quick start tutorial on how to use <%= iConfig.get("name") %>.
 					&raquo;</a>
 			</p>
 		</div>
@@ -34,17 +35,11 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				<div class="column>">
 				<ul>
 					<%
-					ClassDataBase base = Globals.getClasses();
-					ArrayList<MyClass> classes	= new ArrayList<MyClass>();
-					for (int i=0;i<base.getObjects().size();i++) {
-						MyClass iClass = (MyClass) base.getObject(i);
-						if (iClass.getUid().equals(user.getUid())) {
-							classes.add(iClass);
-						}
-					}
-					for (MyClass iClass : classes) {
+					IDataStructure classes=Globals.runAttrQuery("Classes", "class", "uid", user.get("uid").getTextValue());
+					for (IDataObject iClass1 : classes) {
+						IDataStructure iClass=(IDataStructure) iClass1;
 					%>
-					<li><a href="teacher_class.jsp?id=<%= iClass.getCid() %>"><%= iConfig.namePrefix %><%= iClass.getName() %></a> | <%= iConfig.namePrefix %>CLASS1GRADE</li>
+					<li><a href="teacher_class.jsp?id=<%= iClass.get("cid") %>"><%= iConfig.get("namePrefix") %><%= iClass.get("name") %></a> | <%= iConfig.get("namePrefix") %>CLASS1GRADE</li>
 					<% } %>
 				</ul>
 				</div>
@@ -58,10 +53,12 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 					<select name="sid">
 						<option selected>Select a Section</option>
 						<%
-						for (MyClass c : classes) {
-							for (ClassSection s : c.getSections()) {
+						for (IDataObject c1 : classes) {
+							IDataStructure c=(IDataStructure) c1;
+							for (IDataObject s1 : (IDataStructure) c.get("sections")) {
+								IDataStructure s = (IDataStructure) s1;
 						%>
-							<option value="<%= s.getSid() %>"><%= iConfig.namePrefix %><%= s.getName() %></option>
+							<option value="<%= s.get("sid") %>"><%= iConfig.get("namePrefix") %><%= s.get("name") %></option>
 						<%
 							}
 						}
@@ -89,18 +86,18 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				<form>
 					<select name="quikattendanceclass">
 						<option selected>Choose a Class</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>CLASS1NAME"><%= iConfig.namePrefix %>CLASS1NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>CLASS2NAME"><%= iConfig.namePrefix %>CLASS2NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>CLASS3NAME"><%= iConfig.namePrefix %>CLASS3NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>CLASS4NAME"><%= iConfig.namePrefix %>CLASS4NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>CLASS5NAME"><%= iConfig.namePrefix %>CLASS5NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>CLASS1NAME"><%= iConfig.get("namePrefix") %>CLASS1NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>CLASS2NAME"><%= iConfig.get("namePrefix") %>CLASS2NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>CLASS3NAME"><%= iConfig.get("namePrefix") %>CLASS3NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>CLASS4NAME"><%= iConfig.get("namePrefix") %>CLASS4NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>CLASS5NAME"><%= iConfig.get("namePrefix") %>CLASS5NAME</option>
 					</select> <select name="quikattendancestudent">
 						<option selected>Select a Student</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT1NAME"><%= iConfig.namePrefix %>STUDENT1NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT2NAME"><%= iConfig.namePrefix %>STUDENT2NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT3NAME"><%= iConfig.namePrefix %>STUDENT3NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT4NAME"><%= iConfig.namePrefix %>STUDENT4NAME</option>
-						<option value="quikattendance<%= iConfig.namePrefix %>STUDENT5NAME"><%= iConfig.namePrefix %>STUDENT5NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>STUDENT1NAME"><%= iConfig.get("namePrefix") %>STUDENT1NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>STUDENT2NAME"><%= iConfig.get("namePrefix") %>STUDENT2NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>STUDENT3NAME"><%= iConfig.get("namePrefix") %>STUDENT3NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>STUDENT4NAME"><%= iConfig.get("namePrefix") %>STUDENT4NAME</option>
+						<option value="quikattendance<%= iConfig.get("namePrefix") %>STUDENT5NAME"><%= iConfig.get("namePrefix") %>STUDENT5NAME</option>
 					</select>
 					<p>Remember, Present until proven Absent!</p>
 					<select name="quikattendanceselect">
@@ -116,7 +113,8 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 				</p>
 			</div>
 		</div>
-		<% if (user.isShowWelcomeMessage()) { %>
+		
+		<% if (Boolean.parseBoolean(user.get("showWelcome").getTextValue())) { %>
 		<a href="edit_user.do?value=false">Hide welcome message</a>
 		<% } else { %>
 		<a href="edit_user.do?value=true">Show welcome message</a>
