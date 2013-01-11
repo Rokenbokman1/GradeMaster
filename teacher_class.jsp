@@ -61,6 +61,7 @@
 			</table>
 			<h5 style="margin-left: 30px">Assignments</h5>
 			<%
+			if (assignments!=null) {
 				for (IDataObject a1 : assignments) {
 						IDataStructure a = (IDataStructure) a1;
 			%>
@@ -103,6 +104,7 @@
 				</table>
 			</div>
 			<%
+				}
 				}
 				}
 			%>

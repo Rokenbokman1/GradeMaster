@@ -7,6 +7,7 @@ import java.util.HashMap;
 import com.eakjb.EakjbData.AttributeQuery;
 import com.eakjb.EakjbData.DataInterface;
 import com.eakjb.EakjbData.DataStructureQuery;
+import com.eakjb.EakjbData.HashMapDataStructure;
 import com.eakjb.EakjbData.IDataInterface;
 import com.eakjb.EakjbData.IDataStructure;
 import com.eakjb.EakjbData.RawLocalLoader;
@@ -54,7 +55,7 @@ public class Globals {
 		} catch (Exception e) {
 			Globals.getLogger().log(e);
 		}
-		return null;
+		return new HashMapDataStructure(i, Globals.getLogger());
 	}
 	public static void setInterface(String i, String path) {
 		props=setInterface(i,path,props);
