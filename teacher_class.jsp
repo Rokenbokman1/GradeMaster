@@ -43,6 +43,7 @@
 					IDataStructure s = (IDataStructure) s1;
 					IDataStructure assignments = Globals.runAttrQuery("Assignments", "assignment", "sid", s.get("sid").getTextValue());
 			%>
+			<%= Globals.getStructure("Assignments").getObjects() %>
 			<h4><%=iConfig.get("namePrefix")%><%=s.get("name")%></h4>
 			<table
 				style="margin: 10px; cell-padding: 5px; background-color: #F0F0F0; width: 30%">

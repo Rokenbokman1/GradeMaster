@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Assignments>
+<assignment>
+<aid>0</aid>
+<sid>1</sid>
+<name>Test</name>
+<pts>100</pts>
+<assigned>01/01/2013</assigned>
+<due>01/11/2013</due>
+<multi>5</multi>
+<desc>OMGZ STUDY!</desc>
+</assignment>
 </Assignments>
