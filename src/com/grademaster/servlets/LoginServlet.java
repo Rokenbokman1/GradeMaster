@@ -16,7 +16,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = -9088365072065846961L;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		res.sendRedirect("login_form.jsp");
+		res.sendRedirect("shared/login_form.jsp");
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 	    log.log("Login servlet is not complete yet.",ErrorLevel.WARNING);
 	    
 	    if (req.getParameter("username")==null || req.getParameter("username")=="" || req.getParameter("password")==null || req.getParameter("password")=="") {
-	    	res.sendRedirect("login_form.jsp?error=Empty username or password");
+	    	res.sendRedirect("shared/login_form.jsp?error=Empty username or password");
 	    } else {
 	    	Authenticator auth=null;
 			try {
@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 			}
 	    	IDataStructure user=auth.authUser(req.getParameter("username"), req.getParameter("password"), req.getParameter("type"));
 	    	if (user==null) {
-	    		res.sendRedirect("login_form.jsp?error=Incorrect username or password");
+	    		res.sendRedirect("shared/login_form.jsp?error=Incorrect username or password");
 	    	} else {
 	    		req.getSession(true).setAttribute("user", user);
 	    		req.getSession(true).setAttribute("loggedIn", true);

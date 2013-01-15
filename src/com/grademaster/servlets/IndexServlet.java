@@ -28,12 +28,14 @@ public class IndexServlet extends HttpServlet {
 	    }
 	    if (loggedIn==true) {
 	    	log.log("User is logged in.");
-	    	String redirect="index_misc.jsp";
+	    	String redirect="";
 	    	String accountType = ((IDataStructure) req.getSession(true).getAttribute("user")).get("type").getTextValue();
 	    	if (accountType!=null && accountType.equals("teacher")) {
-	    		redirect = "teacher_index.jsp";
+	    		redirect = "teacher/teacher_index.jsp";
 	    	} else if (accountType!=null && accountType.equals("student")) {
-	    		redirect = "student_index.jsp";
+	    		redirect = "student/student_index.jsp";
+	    	} else {
+	    		throw new ServletException("Corrupt User!");
 	    	}
 		    log.log("Index dispatched to: " + redirect);
 	    	RequestDispatcher view = req.getRequestDispatcher(redirect);
