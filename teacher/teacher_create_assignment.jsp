@@ -7,7 +7,7 @@ User user=null;
 if ((Boolean) session.getAttribute("loggedIn")) {
 	user = (User) session.getAttribute("user");
 	}%>
-<jsp:include page="header.jsp" />
+<jsp:include page="../shared/header.jsp" />
 <body>
 	<jsp:include page="teacher_nav.jsp" />
 
@@ -49,4 +49,4 @@ if ((Boolean) session.getAttribute("loggedIn")) {
 		<% } else { %>
 		<a href="edit_user.do?value=true">Show welcome message</a>
 		<% } %>
-		<jsp:include page="footer.jsp" />
+		<jsp:include page="../shared/footer.jsp" />
