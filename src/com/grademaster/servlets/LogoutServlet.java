@@ -18,8 +18,7 @@ public class LogoutServlet extends HttpServlet {
 		
 	    log.log("Logout servlet started.",ErrorLevel.INFO);
 	    
-		req.getSession().setAttribute("loggedIn",false);
-		req.getSession().setAttribute("user",null);
+		req.getSession().invalidate();
 	    
 		if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {
 	    	res.sendRedirect("index.do");

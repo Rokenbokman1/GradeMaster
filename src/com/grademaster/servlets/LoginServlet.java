@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet {
 	    	if (user==null) {
 	    		res.sendRedirect("shared/login_form.jsp?error=Incorrect username or password");
 	    	} else {
+	    		req.getSession(true).setAttribute("iConfig", Globals.getInterface("Config"));
 	    		req.getSession(true).setAttribute("user", user);
 	    		req.getSession(true).setAttribute("loggedIn", true);
 	    		if (req.getParameter("redirect")==null || req.getParameter("redirect")=="") {

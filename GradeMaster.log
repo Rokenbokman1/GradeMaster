@@ -1,23 +1,14 @@
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Initializing Application...
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Initializing Data paths...
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Configuring 'Config' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Data Interface.
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Configuring 'Users' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Data Interface.
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Configuring 'Classes' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Data Interface.
-[Tue Jan 15 16:57:35 MST 2013] [INFO] Configuring 'Assignments' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Tue Jan 15 16:57:35 MST 2013] [DEBUG] Created new Data Interface.
-[Tue Jan 15 16:57:43 MST 2013] [INFO] Login servlet running...
-[Tue Jan 15 16:57:43 MST 2013] [WARNING] Login servlet is not complete yet.
-[Tue Jan 15 16:57:43 MST 2013] [WARNING] No loggedin session data for user.
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Loaded new data.
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Loadind data...
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Returning path...
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Loading local data as string from /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Converting xml to object...
-[Tue Jan 15 16:57:45 MST 2013] [DEBUG] Converting String to XML...
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Initializing Application...
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Initializing Data paths...
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Config' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Users' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Classes' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Assignments' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
