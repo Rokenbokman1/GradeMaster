@@ -19,9 +19,9 @@ if (!(request.getParameter("t")==null || request.getParameter("t") =="")) {
 <jsp:include page="header.jsp" />
 <body>
 	<% if (session.getAttribute("loggedIn")!=null && (Boolean) session.getAttribute("loggedIn") == true && user.get("type").getTextValue().equals("teacher")) { %>
-		<jsp:include page="../teacher/teacher_nav.jsp" />
+		<jsp:include page="teacher_nav.jsp" />
 	<% } else { %>
-		<jsp:include page="../student/student_nav.jsp" />
+		<jsp:include page="student_nav.jsp" />
 	<% } %>
 	<div class="container">
 	<%

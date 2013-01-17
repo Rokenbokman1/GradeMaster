@@ -1,6 +1,6 @@
 <jsp:include page="header.jsp"></jsp:include>
 
-<body background="../img/loginbackground.jpg">
+<body background="img\loginbackground.jpg">
 
 <script type="text/javascript">
 var selectFunction = function() {
@@ -29,7 +29,7 @@ xmlhttp.send();
 }
 </script>
 
-	<jsp:include page="../student/student_nav.jsp"></jsp:include>
+	<jsp:include page="student_nav.jsp"></jsp:include>
 	
 	<div class="container">
 		<h2 align="center">Please Login</h2>

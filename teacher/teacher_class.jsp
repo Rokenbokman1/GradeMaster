@@ -12,7 +12,7 @@
 			"cid", request.getParameter("id"));
 %>
 
-<jsp:include page="../shared/header.jsp" />
+<jsp:include page="header.jsp" />
 <body>
 	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
@@ -110,4 +110,4 @@
 				}
 			%>
 		</div>
-		<jsp:include page="../shared/footer.jsp" />
+		<jsp:include page="footer.jsp" />

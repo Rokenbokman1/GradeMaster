@@ -23,7 +23,7 @@ IDataStructure iConfig = Globals.getStructure("Config");
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="index.do">Home</a></li>
-                            <li><a href="../shared/about.jsp">About</a></li>
+                            <li><a href="about.jsp">About</a></li>
                             <% if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) { %>
                             <li><a href="todo.do">To-Do List</a></li>
                             <li><a href="calendar.do">Calendar</a></li>
@@ -48,7 +48,7 @@ IDataStructure iConfig = Globals.getStructure("Config");
                                 </ul>
                             </li>
                             <% } else { %>
-                            	<li><a href="../shared/tutorial.jsp">Tutorials</a></li>
+                            	<li><a href="tutorial.jsp">Tutorials</a></li>
                             <% } %>
                         </ul>
                         <% if (session.getAttribute("loggedIn")!=null&&(Boolean) session.getAttribute("loggedIn")==true) {%>
