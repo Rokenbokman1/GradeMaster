@@ -199,3 +199,93 @@
 [Wed Jan 16 20:44:10 MST 2013] [DEBUG] Returned cached data.
 [Wed Jan 16 20:44:21 MST 2013] [DEBUG] Returned cached data.
 [Wed Jan 16 20:44:23 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:11 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:38:11 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:38:11 MST 2013] [WARNING] No loggedin session data for user.
+[Thu Jan 17 16:38:11 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:15 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:17 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:19 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:19 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:20 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:38:20 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:38:20 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:38:21 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:38:21 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:38:21 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:06 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:39:06 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:39:06 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:07 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:08 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:11 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:13 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:39:13 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:39:13 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:18 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:18 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:19 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:19 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:19 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:19 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:19 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:19 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:20 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:20 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:20 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:20 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:20 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:20 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:20 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:20 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:22 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:22 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:22 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:22 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:22 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:22 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:39:24 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:39:24 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:40:30 MST 2013] [INFO] User type lookup Servlet Started.
+[Thu Jan 17 16:40:30 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:40:32 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:40:32 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:40:32 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:40:32 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:40:32 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:40:32 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:40:32 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:40:32 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:40:32 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:45:24 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:45:24 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:45:24 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:45:24 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:45:24 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:47:53 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:47:53 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:47:53 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:47:53 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:48:52 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:48:52 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:48:52 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:48:52 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:51:24 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:51:24 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:51:24 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:51:24 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:52:39 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:52:39 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:52:39 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:52:39 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:52:39 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:53:28 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:53:28 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:53:28 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:53:28 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:53:28 MST 2013] [DEBUG] Returned cached data.
+[Thu Jan 17 16:53:55 MST 2013] [INFO] Login servlet running...
+[Thu Jan 17 16:53:55 MST 2013] [WARNING] Login servlet is not complete yet.
+[Thu Jan 17 16:53:55 MST 2013] [DEBUG] User is logged in.
+[Thu Jan 17 16:53:55 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Thu Jan 17 16:53:55 MST 2013] [DEBUG] Returned cached data.

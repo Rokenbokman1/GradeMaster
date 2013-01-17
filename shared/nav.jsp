@@ -15,7 +15,7 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a>
 			<a class="brand" href="<%= request.getContextPath() %>/index.do">
-				<% if (loggedIn) { %> <%= iConfig.get("namePrefix") %>
+				<% if (loggedIn) { %>
 				<%= iConfig.get("namePrefix") %><%= user.get("fname").getTextValue()+" "+user.get("lname").getTextValue() %>
 				<% } else { %>
 				<%= iConfig.get("namePrefix") %><%= iConfig.get("name") %>
@@ -24,9 +24,9 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 			
 			<div class="nav-collapse collapse">
 				<% if (loggedIn&&user.get("type").getTextValue().equals("student")) { %>
-				<jsp:include page="${ request.contextPath }/student/student_nav.jsp>"></jsp:include>
+				<jsp:include page="${ request.contextPath }/student/student_nav.jsp"></jsp:include>
 				<%} else if (loggedIn&&user.get("type").getTextValue().equals("teacher")) { %>
-				<jsp:include page="${ request.contextPath }/teacher/teacher_nav.jsp>"></jsp:include>
+				<jsp:include page="${ request.contextPath }/teacher/teacher_nav.jsp"></jsp:include>
 				<%} else { %>
 				<jsp:include page="misc_nav.jsp"></jsp:include>
 				<% } %>
