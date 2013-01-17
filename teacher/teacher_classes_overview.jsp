@@ -18,7 +18,7 @@
 	}
 	%>
 
-<jsp:include page="header.jsp" />
+<jsp:include page="../shared/header.jsp" />
 <body>
 	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
@@ -45,4 +45,4 @@
 	<%	
 	}
 	%>
-<jsp:include page="footer.jsp" />
+<jsp:include page="../shared/footer.jsp" />
