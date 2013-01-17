@@ -7,7 +7,7 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 %>
 
 <ul class="nav">
-	<li class="active"><a href="index.do">Home</a></li>
-	<li><a href="shared/about.jsp">About</a></li>
-	<li><a href="shared/tutorial.jsp">Tutorials</a></li>
+	<li class="active"><a href="<%= request.getContextPath() %>/index.do">Home</a></li>
+	<li><a href="<%= request.getContextPath() %>/shared/about.jsp">About</a></li>
+	<li><a href="<%= request.getContextPath() %>/shared/tutorial.jsp">Tutorials</a></li>
 </ul>

@@ -1,7 +1,21 @@
 <%@ page import="com.grademaster.Globals" %>
 <%@ page import="com.eakjb.EakjbData.IDataStructure" %>
 <%
-IDataStructure con = Globals.getStructure("Config");
+IDataStructure iConfig = Globals.getStructure("Config");
+IDataStructure user = null;
+boolean loggedIn = false;
+
+if (session.getAttribute("loggedIn")!=null) {
+	loggedIn = (Boolean) session.getAttribute("loggedIn");
+}
+
+if (loggedIn) {
+	user=(IDataStructure) session.getAttribute("user");
+}
+
+session.setAttribute("iConfig", iConfig);
+session.setAttribute("loggedIn", loggedIn);
+session.setAttribute("user", user);
 %>
 <!DOCTYPE html>
 
@@ -19,12 +33,12 @@ IDataStructure con = Globals.getStructure("Config");
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title><%= con.get("name") %></title>
+<title><%= iConfig.get("name") %></title>
 
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
 
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/bootstrap.min.css">
 
 <style>
 body {
@@ -33,12 +47,12 @@ body {
 }
 </style>
 
-<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="shortcut icon" type="image/x-icon" href="<%= con.get("favicon") %>"/>
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/main.css">
+<link rel="shortcut icon" type="image/x-icon" href="<%= request.getContextPath() %>/<%= iConfig.get("favicon") %>"/>
 
 
-<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
 <!--[if lt IE 7]>

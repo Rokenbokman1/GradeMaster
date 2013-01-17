@@ -14,7 +14,7 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="index.do">
+			<a class="brand" href="<%= request.getContextPath() %>/index.do">
 				<% if (loggedIn) { %> <%= iConfig.get("namePrefix") %>
 				<%= iConfig.get("namePrefix") %><%= user.get("fname").getTextValue()+" "+user.get("lname").getTextValue() %>
 				<% } else { %>
@@ -23,20 +23,20 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 			</a>
 			
 			<div class="nav-collapse collapse">
-				<% if (user.get("type").getTextValue().equals("student")) { %>
-				<jsp:include page="../student/student_nav.jsp"></jsp:include>
-				<%} else if (user.get("type").getTextValue().equals("teacher")) { %>
-				<jsp:include page="../teacher/teacher_nav.jsp"></jsp:include>
+				<% if (loggedIn&&user.get("type").getTextValue().equals("student")) { %>
+				<jsp:include page="${ request.contextPath }/student/student_nav.jsp>"></jsp:include>
+				<%} else if (loggedIn&&user.get("type").getTextValue().equals("teacher")) { %>
+				<jsp:include page="${ request.contextPath }/teacher/teacher_nav.jsp>"></jsp:include>
 				<%} else { %>
 				<jsp:include page="misc_nav.jsp"></jsp:include>
 				<% } %>
 
-				<% if (loggedIn) {%>
-				<form class="navbar-form pull-right" action="logout.do" method="get">
+				<% if (loggedIn) { %>
+				<form class="navbar-form pull-right" action="<%= request.getContextPath() %>/logout.do" method="get">
 					<input type="submit" value="Log out" class="btn" />
 				</form>
 				<% } else { %>
-				<form class="navbar-form pull-right" action="login.do" method="get">
+				<form class="navbar-form pull-right" action="<%= request.getContextPath() %>/login.do" method="get">
 					<input type="submit" value="Log in" class="btn" />
 				</form>
 				<% } %>

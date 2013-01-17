@@ -1,7 +1,4 @@
-<hr />
-<footer>
-                <p>&copy; GradeMaster 2012</p>
-            </footer>
+<footer style="position:fixed; bottom:0;"><p>&copy; GradeMaster 2012</p></footer>
 
         </div> <!-- /container -->
 

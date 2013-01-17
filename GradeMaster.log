@@ -1,24 +1,201 @@
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Initializing Application...
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Initializing Data paths...
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Config' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Users' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Classes' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
-[Wed Jan 16 17:09:14 MST 2013] [INFO] Configuring 'Assignments' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Raw Local Loader.
-[Wed Jan 16 17:09:14 MST 2013] [DEBUG] Created new Data Interface.
-[Wed Jan 16 19:31:53 MST 2013] [INFO] Login servlet running...
-[Wed Jan 16 19:31:53 MST 2013] [WARNING] Login servlet is not complete yet.
-[Wed Jan 16 19:31:53 MST 2013] [WARNING] No loggedin session data for user.
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Loaded new data.
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Loadind data...
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Returning path...
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Loading local data as string from /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Converting xml to object...
-[Wed Jan 16 19:31:54 MST 2013] [DEBUG] Converting String to XML...
-[Wed Jan 16 19:38:07 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Initializing Application...
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Initializing Data paths...
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Configuring 'Config' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Configuring 'Users' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Configuring 'Classes' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Classes.xml
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 20:14:35 MST 2013] [INFO] Configuring 'Assignments' path to: /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Assignments.xml
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Raw Local Loader.
+[Wed Jan 16 20:14:35 MST 2013] [DEBUG] Created new Data Interface.
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Loaded new data.
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Loadind data...
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Returning path...
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Loading local data as string from /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Config.xml
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Converting xml to object...
+[Wed Jan 16 20:14:37 MST 2013] [DEBUG] Converting String to XML...
+[Wed Jan 16 20:15:00 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:15:43 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:01 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:01 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:01 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:02 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:02 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:02 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:02 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:02 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:02 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:02 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:02 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:02 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:03 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:03 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:03 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:35 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:43 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:44 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:44 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:44 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:45 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:45 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:45 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:46 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:46 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:48 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:48 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:55 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:56 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:56 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:56 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:56 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:56 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:56 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:16:56 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:16:56 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:16:57 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:17:28 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:17:28 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:17:55 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:18 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:19 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:18:19 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:18:19 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:20 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:18:20 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:18:20 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:20 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:20 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:22 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:22 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:25 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:25 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:27 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:42 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:18:42 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:19:15 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:20:56 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:20:56 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:21:51 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:24:01 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:24:20 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:25:02 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:25:53 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:26:20 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:30:41 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:32:04 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:32:34 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:33:17 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:35:27 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:35:29 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Loaded new data.
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Loadind data...
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Returning path...
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Loading local data as string from /Users/jake/Desktop/apache-tomcat-7.0.34/webapps/GradeMaster/xml/Users.xml
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Converting xml to object...
+[Wed Jan 16 20:35:29 MST 2013] [DEBUG] Converting String to XML...
+[Wed Jan 16 20:35:30 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:35:30 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:35:30 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:35:30 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:35:30 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:35:30 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:35:31 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:35:31 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:16 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:17 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:36:17 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:17 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:36:17 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:18 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:36:18 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:18 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:36:18 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:18 MST 2013] [INFO] User type lookup Servlet Started.
+[Wed Jan 16 20:36:18 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:19 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:19 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:19 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:19 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:19 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:19 MST 2013] [DEBUG] User is logged in.
+[Wed Jan 16 20:36:19 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Wed Jan 16 20:36:19 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:19 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:28 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:28 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:28 MST 2013] [DEBUG] User is logged in.
+[Wed Jan 16 20:36:28 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Wed Jan 16 20:36:28 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:28 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:29 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:29 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] User is logged in.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:29 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:29 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] User is logged in.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Index dispatched to: student/student_index.jsp
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:29 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:36 MST 2013] [INFO] Logout servlet started.
+[Wed Jan 16 20:36:36 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:36:36 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:36:36 MST 2013] [WARNING] No loggedin session data for user.
+[Wed Jan 16 20:36:36 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:36:38 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:37:16 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:37:31 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:14 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:31 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:36 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:38:36 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:38:36 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:37 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:38 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:38 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:54 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:54 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:56 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:38:56 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:38:56 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:38:57 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:39:00 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:39:01 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:39:01 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:40:05 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:40:05 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:40:05 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:40:06 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:41:58 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:43:26 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:43:38 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:43:41 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:43:42 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:43:42 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:43:42 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:43:43 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:03 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:04 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:05 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:05 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:44:05 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:44:05 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:07 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:07 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:08 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:44:08 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:44:08 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:08 MST 2013] [INFO] Login servlet running...
+[Wed Jan 16 20:44:08 MST 2013] [WARNING] Login servlet is not complete yet.
+[Wed Jan 16 20:44:08 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:09 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:09 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:10 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:21 MST 2013] [DEBUG] Returned cached data.
+[Wed Jan 16 20:44:23 MST 2013] [DEBUG] Returned cached data.
