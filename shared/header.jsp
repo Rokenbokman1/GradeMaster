@@ -33,12 +33,12 @@ body {
 }
 </style>
 
-<link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
-<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="css/main.css">
 <link rel="shortcut icon" type="image/x-icon" href="<%= con.get("favicon") %>"/>
 
 
-<script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
 <!--[if lt IE 7]>
