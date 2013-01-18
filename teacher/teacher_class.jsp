@@ -1,21 +1,22 @@
-<%@ page import="com.eakjb.EakjbData.*"%>
+<%@ page import="com.eakjb.EakjbData.IDataStructure"%>
+<%@ page import="com.eakjb.EakjbData.IDataObject"%>
 <%@ page import="com.grademaster.Globals"%>
-<%@ page import="java.util.ArrayList"%>
-<%
-	IDataStructure user = null;
-	if ((Boolean) session.getAttribute("loggedIn")) {
-		user = (IDataStructure) session.getAttribute("User");
-	}
-	IDataStructure iConfig = Globals.getStructure("Config");
 
+<jsp:include page="/${ request.contextPath }/shared/header.jsp" />
+
+<%
+	IDataStructure iConfig = (IDataStructure) session
+			.getAttribute("iConfig");
+	IDataStructure user = (IDataStructure) session.getAttribute("user");
+	boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
+	
 	IDataStructure iClass = Globals.runAttrQuery("Classes", "class",
 			"cid", request.getParameter("id"));
 %>
 
-<jsp:include page="../shared/header.jsp" />
 <body>
-	<jsp:include page="teacher_nav.jsp" />
 	<div class="container">
+	<jsp:include page="/${ request.contextPath }/shared/nav.jsp" />
 		<h2>
 			Class Overview:
 			<%=iConfig.get("namePrefix")%><%=iClass.get("name")%></h2>
@@ -109,5 +110,6 @@
 				}
 				}
 			%>
+		</div>
 		</div>
 		<jsp:include page="../shared/footer.jsp" />
