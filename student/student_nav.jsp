@@ -11,7 +11,7 @@ boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 	<li><a href="<%= request.getContextPath() %>/todo.do">To-Do List</a></li>
 	<li><a href="<%= request.getContextPath() %>/calendar.do">Calendar</a></li>
 	<li><a href="<%= request.getContextPath() %>/gradebook.do">Gradebook</a></li>
-	<li class="dropdown"><a href="<%= request.getContextPath() %>/classes_overview.do"
+	<li class="dropdown"><a href=""
 		class="dropdown-toggle" data-toggle="dropdown">Classes <b
 			class="caret"></b></a>
 		<ul class="dropdown-menu">

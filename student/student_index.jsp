@@ -11,8 +11,8 @@
 %>
 
 <body>
-	<jsp:include page="/${ request.contextPath }/shared/nav.jsp" />
 	<div class="container">
+	<jsp:include page="/${ request.contextPath }/shared/nav.jsp" />
 
 		<%
 			if (Boolean.parseBoolean(user.get("showWelcome").getTextValue())) {
