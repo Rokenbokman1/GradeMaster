@@ -10,8 +10,8 @@
 	boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 
 	String tutorial = "both";
-	if (request.getParameter("id") != null
-			&& (tutorial.equals("student") || tutorial
+	if (request.getParameter("t") != null
+			&& (request.getParameter("t").equals("student") || request.getParameter("t")
 					.equals("teacher"))) {
 		tutorial = request.getParameter("t");
 	}

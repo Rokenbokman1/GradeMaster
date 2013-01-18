@@ -5,13 +5,13 @@ IDataStructure iConfig = (IDataStructure) session.getAttribute("iConfig");
 boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 %>
 <ul class="nav">
-	<li class="active"><a href="index.do">Home</a></li>
-	<li><a href="shared/about.jsp">About</a></li>
-	<li><a href="shared/tutorial.jsp">Tutorials</a></li>
-	<li><a href="todo.do">To-Do List</a></li>
-	<li><a href="calendar.do">Calendar</a></li>
-	<li><a href="gradebook.do">Gradebook</a></li>
-	<li class="dropdown"><a href="classes_overview.do"
+	<li><a href="<%= request.getContextPath() %>/index.do">Home</a></li>
+	<li><a href="<%= request.getContextPath() %>/shared/about.jsp">About</a></li>
+	<li><a href="<%= request.getContextPath() %>/shared/tutorial.jsp?t=student">Tutorials</a></li>
+	<li><a href="<%= request.getContextPath() %>/todo.do">To-Do List</a></li>
+	<li><a href="<%= request.getContextPath() %>/calendar.do">Calendar</a></li>
+	<li><a href="<%= request.getContextPath() %>/gradebook.do">Gradebook</a></li>
+	<li class="dropdown"><a href="<%= request.getContextPath() %>/classes_overview.do"
 		class="dropdown-toggle" data-toggle="dropdown">Classes <b
 			class="caret"></b></a>
 		<ul class="dropdown-menu">

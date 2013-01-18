@@ -33,7 +33,7 @@
 			</p>
 			<p>
 				<a href="<%= request.getContextPath() %>/edit_user.do?value=false" class="btn btn-primary btn-large">Close</a>
-				<a href="<%= request.getContextPath() %>/tutorial.jsp?t=student" class="btn btn-primary btn-large">Watch
+				<a href="<%= request.getContextPath() %>/shared/tutorial.jsp?t=student" class="btn btn-primary btn-large">Watch
 					a quick start tutorial on how to use <%=iConfig.get("name")%>.
 					&raquo;
 				</a>
@@ -95,9 +95,9 @@
 		<%
 			if (Boolean.parseBoolean(user.get("showWelcome").getTextValue())) {
 		%>
-		<a href="<%= request.getContextPath() %>edit_user.do?value=false">Hide welcome message</a>
+		<a href="<%= request.getContextPath() %>/edit_user.do?value=false">Hide welcome message</a>
 		<% } else { %>
-		<a href="<%= request.getContextPath() %>edit_user.do?value=true">Show welcome message</a>
+		<a href="<%= request.getContextPath() %>/edit_user.do?value=true">Show welcome message</a>
 		<% } %>
 	</div>
 	<jsp:include page="${ request.contextPath }/shared/footer.jsp" />
