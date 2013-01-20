@@ -22,7 +22,7 @@ public class Globals {
 		HashMap<String,Object> p = new HashMap<String,Object>();
 		
 		try {
-			p.put("logger", new Logger(System.getProperties().get("user.dir")+"/Grademaster.log"));
+			p.put("logger", new Logger(System.getProperties().get("user.dir")+"/Grademaster.log","GradeMaster"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -39,6 +39,7 @@ public class Globals {
 		for (String path : paths) {
 			setInterface(path,System.getProperties().get("user.dir")+"/xml/"+path+".xml",p);
 		}
+		
            
 		return p;
 	}
