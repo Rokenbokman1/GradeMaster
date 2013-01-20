@@ -44,7 +44,7 @@ public class Globals {
 	}
 	public static HashMap<String,Object> setInterface(String i, String path, HashMap<String,Object> p) {
 		p.put(i+".path", path);
-		p.put(i+".interface", new DataInterface(new RawLocalLoader((String) p.get(i+".path"), (Logger) p.get("logger"), new StringReplacer("\n","")), new XMLAdapter((Logger) p.get("logger")), true, (Logger) p.get("logger")));
+		p.put(i+".interface", new DataInterface(new RawLocalLoader((String) p.get(i+".path"), (Logger) p.get("logger"), new StringReplacer("\\r\\n|\\r|\\n","")), new XMLAdapter((Logger) p.get("logger")), true, (Logger) p.get("logger")));
 		return p;
 	}
 	public static IDataInterface getInterface(String i) {
